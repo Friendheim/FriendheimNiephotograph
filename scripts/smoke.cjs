@@ -74,6 +74,15 @@ app.whenReady().then(async () => {
     // ---------- Portfolio ----------
     await win.loadURL(BASE + '#/work')
     await wait(1800)
+    // scroll through the grid so lazy-loaded images count reliably
+    await win.webContents.executeJavaScript(`(async () => {
+      for (let y = 0; y <= document.body.scrollHeight; y += 700) {
+        window.scrollTo(0, y)
+        await new Promise(r => setTimeout(r, 100))
+      }
+      window.scrollTo(0, 0)
+    })()`)
+    await wait(800)
     const work = await win.webContents.executeJavaScript(`(() => ({
       cards: document.querySelectorAll('.masonry .work-card').length,
       imgs: [...document.querySelectorAll('.masonry img')].filter(i => i.complete && i.naturalWidth > 0).length,
