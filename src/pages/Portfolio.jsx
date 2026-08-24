@@ -51,7 +51,6 @@ export default function Portfolio() {
                 <button
                   type="button"
                   className="work-card"
-                  style={{ '--ratio': w.ratio }}
                   onClick={() => setSelected(w)}
                   aria-label={`View details: ${w.title} — ${w.category}`}
                 >

@@ -49,7 +49,7 @@ export default function Home() {
               <Reveal key={w.id} delay={i * 100}>
                 <Link to="/work" className="work-card" aria-label={`${w.title} — ${w.category}`}>
                   <div className="frame">
-                    <img src={w.image} alt={w.alt} loading="lazy" style={{ aspectRatio: w.ratio }} />
+                    <img src={w.image} alt={w.alt} loading="lazy" />
                   </div>
                   <span className="work-overlay">
                     <span className="work-title">{w.title}</span>

@@ -452,7 +452,7 @@ ul {
 .work-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: var(--ratio, 3 / 4);
+  /* natural aspect ratio — the masonry columns make the heights vary */
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }

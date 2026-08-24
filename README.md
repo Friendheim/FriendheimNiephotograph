@@ -26,35 +26,44 @@ Requirements: Node.js 18+ (tested with Node 24 / npm 11).
 
 ```
 ├── index.html                  # fonts, meta, pre-paint theme script
-├── public/
-│   └── images/                 # ← ALL PHOTOS LIVE HERE
-│       ├── hero.jpg            #   home page hero
-│       ├── avatar.jpg          #   about page portrait
-│       └── works/              #   12 portfolio images
+├── public/images/              # hero + avatar photos
+│   ├── hero.jpg                #   home page hero
+│   └── avatar.jpg              #   about page portrait
+├── src/assets/works/           # ← ALL PORTFOLIO PHOTOS (auto-detected)
+│   ├── portrait/               #   photos in here → "Portrait" category
+│   ├── landscape/              #   → "Landscape"
+│   ├── street/                 #   → "Street"
+│   └── travel/                 #   → "Travel"
 ├── scripts/
 │   └── download-images.mjs     # one-off helper to (re)fetch placeholders
 └── src/
     ├── data/
     │   ├── site.js             # ← name, role, slogan, email, Instagram, bio
-    │   └── works.js            # ← titles, categories, locations, descriptions
+    │   └── works.js            # ← optional titles / locations / descriptions
     ├── components/             # Navbar, Footer, Lightbox, Reveal, ThemeToggle…
     └── pages/                  # Home / Work / About / Contact
 ```
 
-## 🖼 Replacing the placeholder photos
+## 🖼 Using your own photos (auto-detected)
 
-All photos are **placeholders** fetched from [picsum.photos](https://picsum.photos)
-(free, no key). To use your own photos:
+**Portfolio photos** — just drop files into the category folders
+(`src/assets/works/portrait/`, `landscape/`, `street/`, `travel/`).
+Every `.jpg` / `.jpeg` / `.png` / `.webp` you put there appears on the
+site automatically — no code to touch, any number of photos:
 
-1. Put your photos in `public/images/` (keep the same file names to avoid touching code):
-   - `public/images/hero.jpg` — home hero (portrait crop, ~4:5)
-   - `public/images/avatar.jpg` — about page portrait (~4:5)
-   - `public/images/works/*.jpg` — portfolio pieces
-2. Or drop files anywhere under `public/` and edit the paths in `src/data/works.js`
-   and `src/data/site.js` (e.g. `image: 'images/works/my-photo.jpg'`).
-3. Keep the `alt` text accurate in `src/data/works.js` / `src/data/site.js`.
+- Title comes from the file name (`golden-hour.jpg` → "Golden Hour") —
+  rename the file to change the title.
+- The folder name becomes the category (add a new folder to add a category).
+- For a custom title / location / date / description / alt text, add one
+  entry in `src/data/works.js` → `overrides`, keyed by `category/filename`.
 
-To re-fetch the placeholders: `node scripts/download-images.mjs`
+**Hero & avatar** — replace `public/images/hero.jpg` and
+`public/images/avatar.jpg` (keep the same file names).
+
+> Tip: keep each photo under ~1–2 MB (resize long edge to ~1600–2000 px) so
+> the site stays fast. JPEG/WebP preferred.
+
+To re-fetch the 30 placeholders: `node scripts/download-images.mjs`
 
 ## ✏️ Editing your information
 
@@ -72,9 +81,10 @@ Everything personal lives in **`src/data/site.js`**:
 | Equipment list | `site.about.equipment[]` |
 | Contact invitation text | `site.contact.intro` |
 
-Portfolio works (titles, categories, locations, dates, descriptions) live in
-**`src/data/works.js`** — add or remove objects freely; the four filter
-categories are defined in `categories`.
+Portfolio works are auto-detected from the folders in
+`src/assets/works/` (see above). Titles / locations / dates / descriptions
+are customized in `src/data/works.js` → `overrides` — add or remove entries
+freely; each is keyed by `category/filename`.
 
 Footer copyright is `© 2026 FriendheimNie` — the year is hard-coded in
 `src/components/Footer.jsx` if you ever want to change it.

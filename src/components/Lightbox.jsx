@@ -82,11 +82,13 @@ export default function Lightbox({ work, onClose }) {
         <div className="lightbox-meta">
           <span className="lightbox-cat">{work.category}</span>
           <h2>{work.title}</h2>
-          <div className="lightbox-facts">
-            <span>📍 {work.location}</span>
-            <span>📅 {work.date}</span>
-          </div>
-          <p className="lightbox-desc">{work.description}</p>
+          {(work.location || work.date) && (
+            <div className="lightbox-facts">
+              {work.location && <span>📍 {work.location}</span>}
+              {work.date && <span>📅 {work.date}</span>}
+            </div>
+          )}
+          {work.description && <p className="lightbox-desc">{work.description}</p>}
           <p className="lightbox-note">Press Esc or click outside to close.</p>
         </div>
       </div>

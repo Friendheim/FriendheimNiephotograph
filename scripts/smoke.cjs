@@ -79,8 +79,8 @@ app.whenReady().then(async () => {
       imgs: [...document.querySelectorAll('.masonry img')].filter(i => i.complete && i.naturalWidth > 0).length,
       filters: document.querySelectorAll('.filter-btn').length,
     }))()`)
-    check('work grid has 12 cards', work.cards === 12, work.cards)
-    check('all 12 images loaded', work.imgs === 12, work.imgs)
+    check('work grid has 30 cards', work.cards === 30, work.cards)
+    check('all 30 images loaded', work.imgs === 30, work.imgs)
     check('5 filter buttons', work.filters === 5, work.filters)
     await shot(win, 'work-light.png')
 
@@ -92,7 +92,7 @@ app.whenReady().then(async () => {
     const filt = await win.webContents.executeJavaScript(
       `document.querySelectorAll('.masonry .work-card').length`
     )
-    check('Portrait filter → 3 cards', filt === 3, filt)
+    check('Portrait filter → 8 cards', filt === 8, filt)
     await shot(win, 'work-portrait.png')
 
     // ---------- Lightbox ----------
