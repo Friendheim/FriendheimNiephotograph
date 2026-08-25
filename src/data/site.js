@@ -25,11 +25,11 @@ export const site = {
   // — About page —
   about: {
     philosophy: [
-      'I photograph what is already there. My work favours quiet scenes and unguarded moments — a folded hand, light crossing a wall, a street that is almost empty. I try not to interrupt the world, only to notice it more carefully.',
-      'The images here are a kind of visual diary: portraits of people I have met along the way, landscapes that slowed me down, and places I have been lucky enough to wander. I edit lightly and honestly — no invented skies, no rearranged shadows.',
+      'I am a student first and a photographer second — three years into learning how to see. My work favours quiet scenes and unguarded moments: a folded hand, light crossing a wall, a street that is almost empty. I try not to interrupt the world, only to notice it more carefully.',
+      'The images here are a kind of visual diary — portraits, street scenes, landscapes and travels from the places I have been lucky enough to wander. I edit lightly and honestly: no invented skies, no rearranged shadows.',
     ],
     story:
-      'I have been making photographs for over a decade, mostly between Asia and Europe, working slowly and in small series. Alongside commissioned portraits and editorial work, I keep a personal practice of street and travel photography that shapes everything else I do.',
+      'Photography found me three years ago, during my student years, and it has been pulling me forward ever since. I make pictures whenever I can — on the way to class, on short trips, in the long quiet of the evening. My dream is to grow into the kind of photographer whose work could one day sit alongside the greats of Magnum Photos.',
     equipment: [
       'Fujifilm X-T5 — 23mm f/1.4 & 56mm f/1.2',
       'Fujifilm X100VI — the everyday camera',

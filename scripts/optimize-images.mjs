@@ -41,7 +41,10 @@ for await (const file of walk(ROOT)) {
         ? img.resize({ width: MAX_EDGE, withoutEnlargement: true })
         : img.resize({ height: MAX_EDGE, withoutEnlargement: true })
     }
-    const buf = await pipeline.jpeg({ quality: QUALITY, progressive: true, mozjpeg: true }).toBuffer()
+    const buf = await pipeline
+      .withMetadata() // keep EXIF (shooting date, camera, GPS) for future scans
+      .jpeg({ quality: QUALITY, progressive: true, mozjpeg: true })
+      .toBuffer()
     const tmp = file + '.tmp'
     await writeFile(tmp, buf)
     await unlink(file)

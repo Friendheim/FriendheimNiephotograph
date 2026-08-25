@@ -70,7 +70,7 @@ app.whenReady().then(async () => {
     check('home h1 = name', home.h1 === 'FriendheimNie', home.h1)
     check('slogan shown', home.slogan === 'Quiet moments, honestly observed.', home.slogan)
     check('hero image loads', home.heroLoaded)
-    check('3 featured cards', home.workCards === 3, home.workCards)
+    check('6 featured cards', home.workCards === 6, home.workCards)
     await shot(win, 'home-light.png')
 
     // ---------- Theme toggle ----------
@@ -126,8 +126,8 @@ app.whenReady().then(async () => {
       return { open: !!d, title: h2 && h2.textContent.trim(), desc: !!document.querySelector('.lightbox-desc'), facts: !!document.querySelector('.lightbox-facts') }
     })()`)
     check('lightbox opens on click', lb.open)
-    check('lightbox shows auto title', lb.title === 'Portrait 01', lb.title)
-    check('lightbox hides empty metadata', !lb.desc && !lb.facts)
+    check('lightbox shows title', lb.title === 'Quiet Study I', lb.title)
+    check('lightbox shows description, hides empty facts', lb.desc && !lb.facts)
     await shot(win, 'lightbox.png')
 
     await win.webContents.executeJavaScript(

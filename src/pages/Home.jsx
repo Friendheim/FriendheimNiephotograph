@@ -4,7 +4,7 @@ import { site } from '../data/site.js'
 import { works } from '../data/works.js'
 
 export default function Home() {
-  const featured = works.slice(0, 3)
+  const featured = works.slice(0, 6)
 
   return (
     <>
