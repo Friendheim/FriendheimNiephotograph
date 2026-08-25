@@ -162,8 +162,8 @@ app.whenReady().then(async () => {
       const ig = document.querySelector('a.btn-ghost')
       return { mailto: mailto && mailto.getAttribute('href'), ig: ig && ig.textContent.trim() }
     })()`)
-    check('mailto button', /friendheimguo@gmail\.com/.test(contact.mailto), contact.mailto)
-    check('instagram button', contact.ig === '@friendheimgyh', contact.ig)
+    check('mailto button', /friendheimnie@gmail\.com/.test(contact.mailto), contact.mailto)
+    check('instagram button', contact.ig === '@friendheimnie', contact.ig)
     await shot(win, 'contact.png')
   } catch (e) {
     check('smoke run', false, e && e.stack ? e.stack.split('\n')[0] : e)

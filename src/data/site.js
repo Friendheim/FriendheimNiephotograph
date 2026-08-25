@@ -10,9 +10,9 @@ export const site = {
   slogan: 'Quiet moments, honestly observed.',
 
   // — Contact —
-  email: 'friendheimguo@gmail.com',
-  instagramHandle: '@friendheimgyh',
-  instagramUrl: 'https://www.instagram.com/friendheimgyh/',
+  email: 'friendheimnie@gmail.com',
+  instagramHandle: '@friendheimnie',
+  instagramUrl: 'https://www.instagram.com/friendheimnie/',
 
   // — Home hero —
   hero: {
