@@ -28,20 +28,25 @@ export default function About() {
           </Reveal>
 
           <div>
-            {about.philosophy.map((p, i) => (
-              <Reveal key={i} delay={i * 90}>
-                <p>{p}</p>
-              </Reveal>
-            ))}
-
-            <Reveal delay={220}>
+            <Reveal>
               <div className="about-section">
-                <h2>Along the way</h2>
-                <p>{about.story}</p>
+                <h2>A quiet way of seeing</h2>
+                {about.philosophy.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </Reveal>
 
-            <Reveal delay={300}>
+            <Reveal delay={160}>
+              <div className="about-section">
+                <h2>Along the way</h2>
+                {(Array.isArray(about.story) ? about.story : [about.story]).map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={240}>
               <div className="about-section">
                 <h2>In the bag</h2>
                 <ul className="equip-list">
