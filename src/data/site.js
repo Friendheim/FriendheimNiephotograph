@@ -29,7 +29,7 @@ export const site = {
       'The images here are a kind of walking diary — portraits, street scenes, landscapes and travels from the places I have been lucky enough to wander through with a camera. I edit lightly and honestly: no invented skies, no rearranged shadows. If a picture is worth showing, it is because it was true before I got there.',
     ],
     story: [
-      'Photography found me three years ago, back home in China, and it came with me when I transferred to TU Dresden. I make most of my pictures on foot — on the way to class, through streets I have never walked before, in the long quiet of the evening. Between semesters I travel light: a small bag, a film camera, and the conviction that the next corner is worth turning.',
+      'Photography found me three years ago, in my first two years at university back home in China, and it came with me when I transferred to TU Dresden in my third year. I make most of my pictures on foot — on the way to class, through streets I have never walked before, in the long quiet of the evening. Between semesters I travel light: a small bag, a film camera, and the conviction that the next corner is worth turning.',
       'My dream is simple and large at the same time: to grow into the kind of photographer whose work could one day stand beside the greats of Magnum Photos — and to have the patience to get there one honest frame at a time.',
     ],
     equipment: [
