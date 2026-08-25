@@ -32,7 +32,7 @@ export const site = {
       'Photography found me three years ago, during my student years, and it has been pulling me forward ever since. I make pictures whenever I can — on the way to class, on short trips, in the long quiet of the evening. My dream is to grow into the kind of photographer whose work could one day sit alongside the greats of Magnum Photos.',
     equipment: [
       'Nikon 35Ti — 35mm film compact, for slow days',
-      'Fujifilm X-T5 — 23mm & 56mm primes',
+      'Fujifilm X-T5 — 23mm f/1.4 & 56mm f/1.2',
       'Fujifilm X100VI — the everyday camera',
       'Minimal post-processing — honest scans, light edits',
     ],
