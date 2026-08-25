@@ -12,8 +12,9 @@
 //      a new category, e.g. src/assets/works/wildlife/)
 //  2. Title comes from the file name by default. For a custom title,
 //     location, date or description, add an entry in `overrides` below.
-//  3. All 28 current photos have real titles & descriptions (AI-identified).
-//     Add location / date per photo whenever you have them.
+//  3. All 28 current photos have polished titles & descriptions
+//     (based on AI-identified content). Add location / date whenever
+//     you have them.
 // ============================================================
 
 // --- Rich metadata, keyed by "category/filename" ---
@@ -21,142 +22,142 @@ const overrides = {
   'portrait/portrait-01.jpg': {
     title: 'Wrist in Blue',
     description:
-      'A close study of a wrist and its small ornaments — amber bead, silver chain and a hanging medallion against a cobalt sleeve, with the garden falling softly out of focus behind.',
+      'Blue sleeve, and a wrist dressed in small keepsakes — amber, silver, turquoise — each one a story I will never be told. The garden behind melts into a green murmur. Some portraits don’t need a face.',
   },
   'portrait/portrait-02.jpg': {
     title: 'Woman by the Pillar',
     description:
-      'A woman stands beside a textured granite pillar on an overcast street, sunglasses on, somewhere between waiting and walking. Soft natural light keeps the frame quiet and observational.',
+      'She stood by the granite pillar longer than anyone expected, sunglasses on against a grey sky. I waited too, and the street gave us this small, still exchange.',
   },
   'portrait/portrait-03.jpg': {
     title: 'Bougainvillea and a Camera',
     description:
-      'A young man with a vintage camera stands on a wooden deck beneath a cascade of pink bougainvillea. The banner behind him — a long-lived outdoor brand — adds a quiet layer of time.',
+      'A vintage camera in young hands, pink bougainvillea tumbling overhead, and behind him a brand that has outlived half a century of seasons. Time, in one frame, at three different speeds.',
   },
   'portrait/portrait-04.jpg': {
     title: 'Under the Turning Maple',
     description:
-      'Seen from above, a couple stands close beneath a maple as its leaves begin to turn, beside a quiet driveway. Soft daylight holds the frame in a calm, tender register.',
+      'From above, the maple was already turning, and the couple underneath had no idea the tree was keeping time for them. I like photographs taken without permission to be this gentle.',
   },
   'portrait/portrait-05.jpg': {
     title: 'Between the Stone Columns',
     description:
-      'The columns divide the frame into quiet vertical sections around the figure. Cool blue clothing and the passing turquoise bus provide the only strong color against the pale stone.',
+      'The columns divided the afternoon into quiet sections, and he stood exactly where the light let him. A turquoise bus passed in a hurry; he did not.',
   },
   'portrait/portrait-06.jpg': {
     title: 'Walking Hand in Hand',
     description:
-      'A couple walks away hand in hand down a chestnut-shaded path, dappled light falling through the canopy. The blue street sign — George-Bähr-Straße — fixes the moment in a particular city afternoon.',
+      'Hand in hand down George-Bähr-Straße, dappled chestnut light falling on their shoulders. I was behind them, which felt like the right place to be.',
   },
   'landscape/landscape-01.jpg': {
     title: 'The White Ferry',
     description:
-      'A white ferry crosses choppy grey water toward mist-shrouded mountains. The overcast light flattens the sea into silver and leaves the boat alone in the frame.',
+      'A white ferry making its unhurried way across grey water, the mountains barely sure they exist. The overcast held the light low and silver, the way sea days should.',
   },
   'landscape/landscape-02.jpg': {
     title: 'House Beside the Pines',
     description:
-      'Dark tree mass fills the right side while the buildings recede through the center. The muted light keeps the timber lines and windows subdued.',
+      'The pines stand guard, and the half-timbered houses keep their counsel behind them. A muted sky, a patient street — the landscape waiting for winter to finish.',
   },
   'landscape/landscape-03.jpg': {
     title: 'Sun Over Frozen Road',
     description:
-      'Low sunlight enters from the left and throws long shadows across the icy surface. Tire marks curve through the cold blue-gray foreground.',
+      'Low sun across a frozen road, long shadows leaning away from the cold. The yellow car is the only thing in the frame willing to hurry.',
   },
   'landscape/landscape-04.jpg': {
     title: 'Chalk Cliffs at Dusk',
     description:
-      'Twilight on the Seven Sisters: a red phone box and rooftops against a fading sky, and below, the white cliffs falling to a shoreline where a small campfire glows. Two frames, one quiet evening.',
+      'Two frames from one dusk at the Seven Sisters: a red phone box against the last of the sky, and far below, white cliffs falling to a shore where a small fire glowed. The sea was doing its quiet work; I did mine.',
   },
   'street/street-01.jpg': {
     title: 'Light Through the Passage',
     description:
-      'The surrounding architecture falls almost completely into silhouette. The rectangular opening holds the light, clouds, and a single slim lamp post.',
+      'The buildings closed ranks, and the light escaped through the one gap they left. A single lamp post kept the opening honest.',
   },
   'street/street-02.jpg': {
     title: 'A Quiet Set Meal',
     description:
-      'Warm indoor light settles across the black tray and ceramic bowls. The food is arranged plainly, with the grilled fish centered on a white plate.',
+      'A set meal at a plain table — grilled fish, rice, soup, the small dishes arranged like a still life that didn’t know it was one.',
   },
   'street/street-03.jpg': {
     title: 'Red Signal at Dusk',
     description:
-      'The image is built from dark outlines against a saturated sky. The red signal is a small, sharp point of color in the upper right.',
+      'At dusk the street becomes an outline drawing. The red signal was the only thing that refused to fade.',
   },
   'street/street-04.jpg': {
     title: 'Poster After Rain',
     description:
-      'An illuminated bus-stop poster for Technische Universität Dresden stands beside a wet path at sunset. The yellow poster dominates the frame while the trees and sky remain softly out of focus behind it.',
+      'The bus-stop poster for TU Dresden stayed lit after the rain, yellow against the cooling street. I passed it twice; the second time, I stopped.',
   },
   'street/street-05.jpg': {
     title: 'Arrow by the Ramp',
     description:
-      'Most of the frame is an unadorned warm wall. The small sign and the cool-toned curve of the doorway make a restrained directional composition.',
+      'A warning on a warm wall — “Vorsicht Rampe!” — pointing toward a doorway that curves like a question mark. The quietest kind of street photograph: almost nothing, exactly placed.',
   },
   'street/street-06.jpg': {
     title: 'Chalk Across the Lecture Hall',
     description:
-      'Rows of desks, notebooks, and heads lead toward the board at the front. Chalk equations and writing stretch across the green panels above the instructor.',
+      'A lecture hall mid-morning: heads bent, chalk moving across green boards. I sat in the back row and kept the noise out of the frame.',
   },
   'street/street-07.jpg': {
     title: 'Two Glasses at Dinner',
     description:
-      'The flash-lit table is bright against the dark wood interior. Warm hanging lights and a blurred room keep the focus on the meal and glasses.',
+      'Two glasses, two plates, one long conversation. The flash froze the table; everything around it stayed soft and dark, the way good evenings do.',
   },
   'travel/travel-01.jpg': {
     title: 'Objects in Warm Light',
     description:
-      'Warm lamps and daylight from the windows illuminate the crowded display tables. The room’s dark wood, green lower walls, and framed pictures remain softly quiet.',
+      'A shop full of things no one needs and everyone should have. The chandelier and the daylight argued politely about which was warmer.',
   },
   'travel/travel-02.jpg': {
     title: 'Red Board of Small Faces',
     description:
-      'The red display forms a concentrated field of ceramic faces and small figures. Stacked books and shop objects fade into soft focus around it.',
+      'A red board covered in small ceramic faces, each one watching the shop in its own way. I like things that look back.',
   },
   'travel/travel-03.jpg': {
     title: 'Houses at the Forest Edge',
     description:
-      'The buildings appear in a narrow opening between a dark facade and a dense wall of trees. Soft, muted daylight keeps the scene calm and low in contrast.',
+      'The village keeps its timber houses close, and the forest presses in from the edge of the frame. They seem to have agreed to tolerate each other.',
   },
   'travel/travel-04.jpg': {
     title: 'Window Across the Room',
     description:
-      'The room is dark around the edges, with a chair, bed, and lit lamps barely visible. The window grid holds the brightest, coolest light in the image.',
+      'The hotel room kept its darkness, and the blue tower across the street kept its light. I left the curtains open, as an apology to the view.',
   },
   'travel/travel-05.jpg': {
     title: 'Rain on the Glass',
     description:
-      'The water on the glass softens the distant trees and breaks the sky into small blurred marks. A bare branching tree remains visible near the center.',
+      'Rain on the window turned the city into a watercolour mid-wash. One bare tree stayed clear enough to hold the frame together.',
   },
   'travel/travel-06.jpg': {
     title: 'Lift Toward the Snow',
     description:
-      'The lift cables and metal supports make strong lines through the pale mountain view. Colored jackets on the nearest riders provide small points of contrast against the snow.',
+      'Three of us, one lift, a wall of snow mountains arriving slowly. The coloured jackets were the only warm things in the frame.',
   },
   'travel/travel-07.jpg': {
     title: 'Spire and Glass Tower',
     description:
-      'Backlight reduces both structures to dark shapes. Overhead wires cut diagonally across the pale, clouded sky.',
+      'A spire that has been praying for centuries and a glass tower that hasn’t decided yet. Overhead wires tried to stitch them into one sky.',
   },
   'travel/travel-08.jpg': {
     title: 'Mountain Behind the City',
     description:
-      'Bright snow on the peak contrasts with the dark lower slopes. The foreground buildings create a plain urban edge beneath the mountain.',
+      'The mountain does not notice the city at its feet. An excavator, a few roofs, and a peak that has seen all of it before.',
   },
   'travel/travel-09.jpg': {
     title: 'Blue Water From Above',
     description:
-      'The image looks down across hard roof surfaces, planted borders, and bright blue water. Deep shadows and cool color give the geometry a quiet, graphic quality.',
+      'From a high window, the geometry of the afternoon: rooftops, planters, and a pool of blue water holding the only perfect rectangle in the city.',
   },
   'travel/travel-10.jpg': {
     title: 'Blue Hour Under the Tree',
     description:
-      'The tree’s fine branches spread across the pale blue background. The solitary figure is small beneath the trunk, with faint rocks and shoreline behind them.',
+      'Blue hour, a bare tree, and a small figure standing where the fog was thinnest. The kind of photograph you take when you’d rather not be alone.',
   },
   'travel/travel-11.jpg': {
     title: 'Bath Beyond the Doorway',
     description:
-      'The doorway frames the pale bathroom in a narrow, centered view. A dark bottle and small items sit on the table in front of the tub.',
+      'A white bath beyond a dark doorway, a small table, a dark bottle — a still life that was already finished before I arrived.',
   },
 }
 
