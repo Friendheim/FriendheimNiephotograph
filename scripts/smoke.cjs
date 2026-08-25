@@ -11,6 +11,19 @@ const path = require('node:path')
 const BASE = process.env.SMOKE_BASE || 'http://127.0.0.1:5173/'
 const OUT = path.join(__dirname, '..', 'smoke-out')
 
+// Expected counts come from the actual photos in src/assets/works/
+const WORKS_ROOT = path.join(__dirname, '..', 'src', 'assets', 'works')
+const IMG_EXT = /\.(jpe?g|png|webp)$/i
+function countImages(dir) {
+  if (!fs.existsSync(dir)) return 0
+  return fs.readdirSync(dir, { withFileTypes: true }).reduce((n, e) => {
+    if (e.isDirectory()) return n + countImages(path.join(dir, e.name))
+    return n + (IMG_EXT.test(e.name) ? 1 : 0)
+  }, 0)
+}
+const EXPECTED_TOTAL = countImages(WORKS_ROOT)
+const EXPECTED_PORTRAIT = countImages(path.join(WORKS_ROOT, 'portrait'))
+
 const results = []
 const consoleErrors = []
 let failures = 0
@@ -88,8 +101,8 @@ app.whenReady().then(async () => {
       imgs: [...document.querySelectorAll('.masonry img')].filter(i => i.complete && i.naturalWidth > 0).length,
       filters: document.querySelectorAll('.filter-btn').length,
     }))()`)
-    check('work grid has 30 cards', work.cards === 30, work.cards)
-    check('all 30 images loaded', work.imgs === 30, work.imgs)
+    check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
+    check('all work images loaded', work.imgs === EXPECTED_TOTAL, `${work.imgs}/${EXPECTED_TOTAL}`)
     check('5 filter buttons', work.filters === 5, work.filters)
     await shot(win, 'work-light.png')
 
@@ -101,7 +114,7 @@ app.whenReady().then(async () => {
     const filt = await win.webContents.executeJavaScript(
       `document.querySelectorAll('.masonry .work-card').length`
     )
-    check('Portrait filter → 8 cards', filt === 8, filt)
+    check('Portrait filter matches portrait folder', filt === EXPECTED_PORTRAIT, `${filt} vs ${EXPECTED_PORTRAIT}`)
     await shot(win, 'work-portrait.png')
 
     // ---------- Lightbox ----------
@@ -110,11 +123,11 @@ app.whenReady().then(async () => {
     const lb = await win.webContents.executeJavaScript(`(() => {
       const d = document.querySelector('.lightbox')
       const h2 = document.querySelector('.lightbox-meta h2')
-      return { open: !!d, title: h2 && h2.textContent.trim(), desc: !!document.querySelector('.lightbox-desc') }
+      return { open: !!d, title: h2 && h2.textContent.trim(), desc: !!document.querySelector('.lightbox-desc'), facts: !!document.querySelector('.lightbox-facts') }
     })()`)
     check('lightbox opens on click', lb.open)
-    check('lightbox shows title', lb.title === 'Afternoon in the Window', lb.title)
-    check('lightbox shows description', lb.desc)
+    check('lightbox shows auto title', lb.title === 'Portrait 01', lb.title)
+    check('lightbox hides empty metadata', !lb.desc && !lb.facts)
     await shot(win, 'lightbox.png')
 
     await win.webContents.executeJavaScript(
