@@ -151,7 +151,7 @@ app.whenReady().then(async () => {
     })()`)
     check('about h1', about.h1 === 'About me', about.h1)
     check('avatar image loads', about.avatarLoaded)
-    check('equipment list has 4 items', about.equip === 4, about.equip)
+    check('equipment list has 2 items', about.equip === 2, about.equip)
     await shot(win, 'about.png')
 
     // ---------- Contact ----------

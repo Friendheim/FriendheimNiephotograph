@@ -31,10 +31,8 @@ export const site = {
     story:
       'Photography found me three years ago, during my student years, and it has been pulling me forward ever since. I make pictures whenever I can — on the way to class, on short trips, in the long quiet of the evening. My dream is to grow into the kind of photographer whose work could one day sit alongside the greats of Magnum Photos.',
     equipment: [
-      'Fujifilm X-T5 — 23mm f/1.4 & 56mm f/1.2',
-      'Fujifilm X100VI — the everyday camera',
-      '35mm film — Olympus OM-1, Kodak Portra 400',
-      'Lightroom only, minimal color work',
+      'Nikon 35Ti — 35mm film compact, my everyday camera',
+      'Minimal post-processing — honest scans, light edits',
     ],
   },
 
