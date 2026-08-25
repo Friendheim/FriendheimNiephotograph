@@ -126,7 +126,7 @@ app.whenReady().then(async () => {
       return { open: !!d, title: h2 && h2.textContent.trim(), desc: !!document.querySelector('.lightbox-desc'), facts: !!document.querySelector('.lightbox-facts') }
     })()`)
     check('lightbox opens on click', lb.open)
-    check('lightbox shows title', lb.title === 'Quiet Study I', lb.title)
+    check('lightbox shows title', lb.title === 'Wrist in Blue', lb.title)
     check('lightbox shows description, hides empty facts', lb.desc && !lb.facts)
     await shot(win, 'lightbox.png')
 
