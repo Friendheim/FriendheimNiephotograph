@@ -202,17 +202,16 @@ app.whenReady().then(async () => {
     check('Outside the Frame shows 4 cards', frame.cards === 4, frame.cards)
     check('Outside the Frame first title is Spire Through Three Realities', frame.first === 'Spire Through Three Realities', frame.first)
 
-    // ---------- Before Trilogy (empty until photos are uploaded) ----------
+    // ---------- Before Trilogy ----------
     await win.webContents.executeJavaScript(
       `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'The Before Trilogy').click()`
     )
-    await wait(600)
+    await wait(700)
     const before = await win.webContents.executeJavaScript(`(() => ({
-      empty: !!document.querySelector('.empty-hint'),
       cards: document.querySelectorAll('.masonry .work-card').length,
       note: !!document.querySelector('.series-note'),
     }))()`)
-    check('Before Trilogy shows empty hint + series note', before.empty && before.cards === 0 && before.note)
+    check('Before Trilogy shows 3 cards + series note', before.cards === 3 && before.note, before.cards)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

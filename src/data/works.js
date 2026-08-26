@@ -232,7 +232,7 @@ const overrides = {
   'before/before-02.jpg': {
     title: 'The Long Evening',
     description:
-      'Sunset, and the conversation that refuses to end. The light changes, the streets fill and empty, and two people keep walking because stopping would mean deciding. Some evenings are really questions wearing daylight.',
+      'Dusk on a balcony, an elderly couple watching the trees from behind — the conversation long finished, the silence still comfortable. A golden moon rises through the dark; the evening has become a question they no longer need to answer.',
   },
   'before/before-03.jpg': {
     title: 'Before Midnight',
