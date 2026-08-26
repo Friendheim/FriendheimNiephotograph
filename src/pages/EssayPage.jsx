@@ -31,7 +31,7 @@ const CHAPTERS = [
     no: 'IV',
     title: 'Passing Through',
     prose:
-      'Between semesters I travel light: a small bag, a film camera, and the conviction that the next corner is worth turning. London’s clock tower, the white cliffs at dusk, a chairlift climbing toward snow.',
+      'Between semesters I travel light: a small bag, a film camera, and the conviction that the next corner is worth turning. A clock tower against the ironwork, the white cliffs at dusk, a chairlift climbing toward snow.',
     works: ['street/street-09', 'landscape/landscape-04', 'travel/travel-06'],
   },
   {
