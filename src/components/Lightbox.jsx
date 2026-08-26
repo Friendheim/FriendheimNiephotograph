@@ -1,21 +1,23 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { CloseIcon, ArrowLeftIcon, ArrowRightIcon, LinkIcon } from './icons.jsx'
+import { useLang, workInLang } from '../i18n.jsx'
 
 /**
  * Immersive work-detail modal.
  * Closes on: backdrop click, close button, or Escape.
  * Browsing: ← / → keys or the arrow buttons step through `items`.
  * Copy link copies the current page URL (per-work deep link).
- * Keyboard: focus is trapped inside while open, then returned to the
- * triggering element on close. Body scroll is locked.
  */
 export default function Lightbox({ work, items = [], onClose, onNavigate }) {
+  const { lang, t } = useLang()
   const panelRef = useRef(null)
   const closeRef = useRef(null)
   const [copied, setCopied] = useState(false)
 
-  const idx = items.findIndex((w) => w.id === work.id)
+  const w = workInLang(work, lang)
+
+  const idx = items.findIndex((x) => x.id === work.id)
   const prev = idx > 0 ? items[idx - 1] : null
   const next = idx >= 0 && idx < items.length - 1 ? items[idx + 1] : null
 
@@ -95,7 +97,7 @@ export default function Lightbox({ work, items = [], onClose, onNavigate }) {
       className="lightbox"
       role="dialog"
       aria-modal="true"
-      aria-label={`${work.title} — ${work.category}`}
+      aria-label={`${w.title} — ${w.category}`}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
@@ -107,7 +109,7 @@ export default function Lightbox({ work, items = [], onClose, onNavigate }) {
           ref={closeRef}
           className="lightbox-close"
           onClick={onClose}
-          aria-label="Close details"
+          aria-label={t('closeDetails')}
         >
           <CloseIcon />
         </button>
@@ -116,7 +118,7 @@ export default function Lightbox({ work, items = [], onClose, onNavigate }) {
             type="button"
             className="lightbox-nav prev"
             onClick={goPrev}
-            aria-label="Previous work"
+            aria-label={t('prevWork')}
           >
             <ArrowLeftIcon />
           </button>
@@ -126,7 +128,7 @@ export default function Lightbox({ work, items = [], onClose, onNavigate }) {
             type="button"
             className="lightbox-nav next"
             onClick={goNext}
-            aria-label="Next work"
+            aria-label={t('nextWork')}
           >
             <ArrowRightIcon />
           </button>
@@ -136,30 +138,30 @@ export default function Lightbox({ work, items = [], onClose, onNavigate }) {
         </div>
         <div className="lightbox-meta">
           <div className="lightbox-meta-top">
-            <span className="lightbox-cat">{work.category}</span>
+            <span className="lightbox-cat">{w.category}</span>
             {items.length > 1 && (
               <span className="lightbox-count">
                 {idx + 1} / {items.length}
               </span>
             )}
           </div>
-          <h2>{work.title}</h2>
-          {(work.location || work.date) && (
+          <h2>{w.title}</h2>
+          {(w.location || w.date) && (
             <div className="lightbox-facts">
-              {work.location && <span>📍 {work.location}</span>}
-              {work.date && <span>📅 {work.date}</span>}
+              {w.location && <span>📍 {w.location}</span>}
+              {w.date && <span>📅 {w.date}</span>}
             </div>
           )}
-          {work.description && <p className="lightbox-desc">{work.description}</p>}
+          {w.description && <p className="lightbox-desc">{w.description}</p>}
           <div className="lightbox-actions">
             <button
               type="button"
               className={`copy-btn${copied ? ' copied' : ''}`}
               onClick={copyLink}
             >
-              <LinkIcon /> {copied ? 'Link copied' : 'Copy link'}
+              <LinkIcon /> {copied ? t('linkCopied') : t('copyLink')}
             </button>
-            <span className="lightbox-note">← → to browse · Esc to close</span>
+            <span className="lightbox-note">{t('browseHint')}</span>
           </div>
         </div>
       </div>

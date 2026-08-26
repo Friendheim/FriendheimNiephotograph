@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useLang } from '../i18n.jsx'
 import { site } from '../data/site.js'
 import { ArrowUpIcon } from './icons.jsx'
 
 export default function Footer() {
+  const { t } = useLang()
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
@@ -16,18 +18,18 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h4>Menu</h4>
+            <h4>{t('menu')}</h4>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/work">Work</Link></li>
-              <li><Link to="/map">Map</Link></li>
-              <li><Link to="/essay">Essay</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/">{t('navHome')}</Link></li>
+              <li><Link to="/work">{t('navWork')}</Link></li>
+              <li><Link to="/map">{t('navMap')}</Link></li>
+              <li><Link to="/essay">{t('navEssay')}</Link></li>
+              <li><Link to="/about">{t('navAbout')}</Link></li>
+              <li><Link to="/contact">{t('navContact')}</Link></li>
             </ul>
           </div>
           <div>
-            <h4>Contact</h4>
+            <h4>{t('footerContact')}</h4>
             <ul className="footer-links">
               <li>
                 <a href={`mailto:${site.email}`}>{site.email}</a>
@@ -43,7 +45,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <span>© 2026 {site.name}</span>
           <button type="button" className="to-top-link" onClick={scrollTop}>
-            Back to top <ArrowUpIcon />
+            {t('backToTop')} <ArrowUpIcon />
           </button>
         </div>
       </div>

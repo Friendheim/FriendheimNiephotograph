@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { SunIcon, MoonIcon } from './icons.jsx'
+import { useLang } from '../i18n.jsx'
 
 function getInitialTheme() {
   try {
@@ -12,6 +13,7 @@ function getInitialTheme() {
 }
 
 export default function ThemeToggle() {
+  const { t } = useLang()
   const [theme, setTheme] = useState(getInitialTheme)
 
   useEffect(() => {
@@ -30,8 +32,8 @@ export default function ThemeToggle() {
       type="button"
       className="theme-toggle"
       onClick={() => setTheme(next)}
-      aria-label={next === 'dark' ? 'Switch to dark mode' : 'Switch to light mode'}
-      title={next === 'dark' ? 'Switch to dark mode' : 'Switch to light mode'}
+      aria-label={next === 'dark' ? t('switchDark') : t('switchLight')}
+      title={next === 'dark' ? t('switchDark') : t('switchLight')}
     >
       {theme === 'light' ? <MoonIcon /> : <SunIcon />}
     </button>

@@ -98,6 +98,16 @@ app.whenReady().then(async () => {
     await win.webContents.executeJavaScript(`document.querySelector('.theme-toggle').click()`)
     await wait(300)
 
+    // ---------- Language toggle ----------
+    await win.webContents.executeJavaScript(`document.querySelector('.lang-toggle').click()`)
+    await wait(400)
+    const zhNav = await win.webContents.executeJavaScript(
+      `[...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join(',')`
+    )
+    check('switches to Chinese', zhNav.includes('首页') && zhNav.includes('作品'), zhNav)
+    await win.webContents.executeJavaScript(`document.querySelector('.lang-toggle').click()`)
+    await wait(400)
+
     // ---------- Portfolio ----------
     await win.loadURL(BASE + '#/work')
     await wait(8000) // let Vite finish first-pass module compilation

@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { useLang } from '../i18n.jsx'
 import { works } from '../data/works.js'
 
 const keyOf = (w) => w.id.replace('../assets/works/', '').replace(/\.(jpe?g|png|webp)$/i, '')
 
 export default function MapPage() {
+  const { lang, t } = useLang()
   const containerRef = useRef(null)
   const mapRef = useRef(null)
 
@@ -27,14 +29,16 @@ export default function MapPage() {
     })
 
     pinned.forEach((w) => {
+      const title = lang === 'zh' ? w.titleZh || w.title : w.title
+      const cat = lang === 'zh' ? w.categoryZh || w.category : w.category
       L.marker(w.coords, { icon })
         .addTo(map)
         .bindPopup(
           `<div class="map-popup">
             <img src="${w.image}" alt="${w.alt}" />
-            <strong>${w.title}</strong>
-            <span>${w.category}${w.location ? ' · ' + w.location : ''}</span>
-            <a href="#/work/${encodeURIComponent(keyOf(w))}">View work →</a>
+            <strong>${title}</strong>
+            <span>${cat}${w.location ? ' · ' + w.location : ''}</span>
+            <a href="#/work/${encodeURIComponent(keyOf(w))}">${t('viewDetails')} →</a>
           </div>`
         )
     })
@@ -48,23 +52,18 @@ export default function MapPage() {
       map.remove()
       mapRef.current = null
     }
-  }, [])
+  }, [lang, t])
 
   return (
     <section className="page-head">
       <div className="container">
-        <p className="eyebrow">Map</p>
-        <h1>Where these frames were made</h1>
-        <p className="page-intro">
-          China → Dresden → London → the white cliffs → the end of the world. Tap a pin to open the
-          work.
-        </p>
+        <p className="eyebrow">{t('mapEyebrow')}</p>
+        <h1>{t('mapH1')}</h1>
+        <p className="page-intro">{t('mapIntro')}</p>
       </div>
-      <div className="map-wrap" ref={containerRef} aria-label="Map of photograph locations" />
+      <div className="map-wrap" ref={containerRef} aria-label={t('mapH1')} />
       <div className="container">
-        <p className="map-footnote">
-          Pins show works with known locations — more will join as the collection grows.
-        </p>
+        <p className="map-footnote">{t('mapFootnote')}</p>
       </div>
     </section>
   )

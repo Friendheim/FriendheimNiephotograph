@@ -1,21 +1,25 @@
 import Reveal from '../components/Reveal.jsx'
 import { MailIcon, InstagramIcon } from '../components/icons.jsx'
+import { useLang } from '../i18n.jsx'
 import { site } from '../data/site.js'
+import { siteZh } from '../data/zh.js'
 
 export default function Contact() {
+  const { lang, t } = useLang()
+  const s = lang === 'zh' ? { ...site, ...siteZh } : site
   const mailto = `mailto:${site.email}?subject=${encodeURIComponent('Photography collaboration')}`
 
   return (
     <section className="contact">
       <div className="container contact-inner">
         <Reveal>
-          <p className="eyebrow">Contact</p>
-          <h1>Let&rsquo;s make something together.</h1>
-          <p className="contact-lede">{site.contact.intro}</p>
+          <p className="eyebrow">{t('contactEyebrow')}</p>
+          <h1>{t('contactH1')}</h1>
+          <p className="contact-lede">{s.contact.intro}</p>
 
           <div className="contact-actions">
             <a className="btn btn-primary" href={mailto}>
-              <MailIcon /> Email me
+              <MailIcon /> {t('emailMe')}
             </a>
             <a
               className="btn btn-ghost"
@@ -28,7 +32,7 @@ export default function Contact() {
           </div>
 
           <p className="contact-note">
-            {site.contact.note} · {site.email}
+            {s.contact.note} · {site.email}
           </p>
         </Reveal>
       </div>

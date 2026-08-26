@@ -1,22 +1,8 @@
 // ============================================================
 //  Portfolio works — AUTO-DETECTED from src/assets/works/.
-//
-//  HOW IT WORKS
-//  1. Every photo you drop into one of these folders appears on
-//     the site automatically (no code changes needed):
-//       src/assets/works/portrait/   → category "Faces"
-//       src/assets/works/landscape/  → category "Landscapes"
-//       src/assets/works/street/     → category "Streets"
-//       src/assets/works/travel/     → category "Journeys"
-//       src/assets/works/creative/   → category "Creative" (new)
-//     (you may add your own folders too — the folder name becomes
-//      a new category, e.g. src/assets/works/wildlife/)
-//  2. Title comes from the file name by default. For a custom title,
-//     location, date or description, add an entry in `overrides` below.
-//  3. All 28 current photos have polished titles & descriptions
-//     (based on AI-identified content). Add location / date whenever
-//     you have them.
+//  Bilingual: English (works.js) + Chinese (./zh.js).
 // ============================================================
+import { workZh, CATEGORY_LABELS_ZH, notesZh } from './zh.js'
 
 // --- Rich metadata, keyed by "category/filename" ---
 const overrides = {
@@ -379,14 +365,18 @@ const works = Object.entries(modules)
     const category = labelFor(folder)
     const override = overrides[`${folder}/${filename}`] || {}
     const place = placePins[`${folder}/${filename}`] || {}
+    const zh = workZh[`${folder}/${filename}`] || {}
     return {
       id: key,
       folder,
       title: override.title || humanizeTitle(filename),
+      titleZh: zh.title || override.title || humanizeTitle(filename),
       category,
+      categoryZh: CATEGORY_LABELS_ZH[folder] || category,
       location: override.location || place.location || '',
       date: override.date || '',
       description: override.description || '',
+      descriptionZh: zh.description || override.description || '',
       image: url,
       coords: place.coords || override.coords || null,
       alt: override.alt || `${override.title || humanizeTitle(filename)} — ${category} photograph`,
@@ -402,38 +392,55 @@ const works = Object.entries(modules)
     return a.image.localeCompare(b.image, undefined, { numeric: true })
   })
 
-// 'All' + every known theme (including empty ones like Creative) + any extra folders
+// 'All' + every known theme (including empty ones) + any extra folders
 const extraFolders = works
   .map((w) => w.folder)
   .filter((f, i, arr) => arr.indexOf(f) === i && !KNOWN_ORDER.includes(f))
   .sort()
-const categories = ['All', ...KNOWN_ORDER.map((k) => labelFor(k)), ...extraFolders.map((f) => labelFor(f))]
 
-// Optional series statement, shown when the theme is active (keyed by label)
-const seriesNotes = {
-  'Outside the Frame':
-    'The Truman series looks at the distance between the real and the invented in travel — the photographs no longer simply prove "I was here"; they ask: as we keep recording the world, are we seeing what is real, or what we believe to be real?',
-  'The Before Trilogy':
-    'Three times of day, one question — sunrise, sunset, midnight. The Before Trilogy asks what love looks like between the morning we meet and the hour we finally tell the truth.',
-  'Days Like These':
-    'The ordinary days of a student’s life — meals, lectures, crossings, weather. Not photographs of a life: the life itself, mid-sentence.',
-  'The Ones I Met':
+// Filters for the portfolio toolbar: { key, en, zh }
+const filters = [
+  { key: 'all', en: 'All', zh: '全部' },
+  ...KNOWN_ORDER.filter((k) => CATEGORY_LABELS[k]).map((k) => ({
+    key: k,
+    en: CATEGORY_LABELS[k],
+    zh: CATEGORY_LABELS_ZH[k] || CATEGORY_LABELS[k],
+  })),
+  ...extraFolders.map((f) => ({ key: f, en: labelFor(f), zh: CATEGORY_LABELS_ZH[f] || labelFor(f) })),
+]
+
+// Series statements, keyed by folder, bilingual { en, zh }
+const notesEn = {
+  portrait:
     'People I meet along the way — those who paused, those who let me take their picture, and once, a friend who turned the camera on me. The series is never finished: there is always a new face waiting at the next corner.',
-  'Places That Held Still':
+  landscape:
     'Landscapes that asked me to stand still — a ferry crossing grey water, cliffs at dusk, a frozen road in low sun. The light came, and the place held still long enough for both of us.',
-  'Passing Through':
+  street:
+    'The ordinary days of a student’s life — meals, lectures, crossings, weather. Not photographs of a life: the life itself, mid-sentence.',
+  travel:
     'Between semesters, a small bag and a film camera — shops, hotel rooms, train windows, one chairlift toward the snow. Places I was lucky enough to pass through.',
-  'Odyssey':
+  odyssey:
     'A series after Homer — a street crowd as a strait to cross, a city as a labyrinth, a horizon as an island never reached. Every journey retold as myth; every myth found again in an ordinary day.',
-  'Memory':
+  memory:
     'Places that exist twice — once as light, once as recollection. The coast, the square, the house: memory redraws them until they become less locations than feelings that keep their shape.',
+  frame:
+    'The Truman series looks at the distance between the real and the invented in travel — the photographs no longer simply prove "I was here"; they ask: as we keep recording the world, are we seeing what is real, or what we believe to be real?',
+  before:
+    'Three times of day, one question — sunrise, sunset, midnight. The Before Trilogy asks what love looks like between the morning we meet and the hour we finally tell the truth.',
 }
 
-// Series metadata for dedicated series pages (key, label, note)
+const seriesNotes = {}
+for (const k of Object.keys(notesEn)) {
+  seriesNotes[k] = { en: notesEn[k], zh: notesZh[k] || '' }
+}
+
+// Series metadata for dedicated series pages (key, bilingual label + note)
 const seriesMeta = KNOWN_ORDER.filter((k) => CATEGORY_LABELS[k]).map((k) => ({
   key: k,
   label: CATEGORY_LABELS[k],
-  note: seriesNotes[CATEGORY_LABELS[k]] || '',
+  labelZh: CATEGORY_LABELS_ZH[k] || CATEGORY_LABELS[k],
+  note: seriesNotes[k].en,
+  noteZh: seriesNotes[k].zh,
 }))
 
-export { works, categories, seriesNotes, seriesMeta }
+export { works, filters, seriesNotes, seriesMeta }

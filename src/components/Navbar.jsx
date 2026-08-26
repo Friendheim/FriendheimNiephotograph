@@ -1,18 +1,11 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle.jsx'
+import { useLang } from '../i18n.jsx'
 import { site } from '../data/site.js'
 
-const links = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/work', label: 'Work' },
-  { to: '/map', label: 'Map' },
-  { to: '/essay', label: 'Essay' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
-]
-
 export default function Navbar() {
+  const { lang, setLang, t } = useLang()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -21,6 +14,15 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const links = [
+    { to: '/', label: t('navHome'), end: true },
+    { to: '/work', label: t('navWork') },
+    { to: '/map', label: t('navMap') },
+    { to: '/essay', label: t('navEssay') },
+    { to: '/about', label: t('navAbout') },
+    { to: '/contact', label: t('navContact') },
+  ]
 
   return (
     <header className={`nav${scrolled ? ' is-scrolled' : ''}`}>
@@ -41,6 +43,17 @@ export default function Navbar() {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <button
+                type="button"
+                className="lang-toggle"
+                onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+                aria-label={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
+                title={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
+              >
+                {lang === 'zh' ? 'EN' : '中'}
+              </button>
+            </li>
             <li>
               <ThemeToggle />
             </li>

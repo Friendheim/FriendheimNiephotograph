@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal.jsx'
 import Lightbox from '../components/Lightbox.jsx'
+import { useLang, workInLang } from '../i18n.jsx'
 import { site } from '../data/site.js'
+import { siteZh } from '../data/zh.js'
 import { works } from '../data/works.js'
 
 // Six featured frames with an identical natural aspect ratio (16:9) — no cropping.
@@ -16,6 +18,8 @@ const FEATURED_KEYS = [
 ]
 
 export default function Home() {
+  const { lang, t } = useLang()
+  const s = lang === 'zh' ? { ...site, ...siteZh } : site
   const featured = FEATURED_KEYS.map((k) => works.find((w) => w.id === k)).filter(Boolean)
   const [selected, setSelected] = useState(null)
 
@@ -25,22 +29,22 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <Reveal className="hero-copy">
-            <p className="eyebrow">{site.role}</p>
-            <h1>{site.name}</h1>
-            <p className="hero-slogan">{site.slogan}</p>
-            <p className="hero-lede">{site.hero.intro}</p>
+            <p className="eyebrow">{s.role}</p>
+            <h1>{s.name}</h1>
+            <p className="hero-slogan">{s.slogan}</p>
+            <p className="hero-lede">{s.hero.intro}</p>
             <div className="hero-actions">
               <Link className="btn btn-primary" to="/work">
-                View the work
+                {t('viewWork')}
               </Link>
               <Link className="btn btn-ghost" to="/contact">
-                Contact
+                {t('contact')}
               </Link>
             </div>
           </Reveal>
           <Reveal delay={150}>
             <figure className="hero-figure">
-              <img src={site.hero.image} alt={site.hero.alt} width="1200" height="1500" />
+              <img src={s.hero.image} alt={s.hero.alt} width="1200" height="1500" />
             </figure>
           </Reveal>
         </div>
@@ -51,31 +55,34 @@ export default function Home() {
         <div className="container">
           <Reveal>
             <div className="featured-head">
-              <h2>Selected frames</h2>
+              <h2>{t('selectedFrames')}</h2>
               <Link className="text-link" to="/work">
-                All frames →
+                {t('allFrames')}
               </Link>
             </div>
           </Reveal>
           <div className="featured-grid">
-            {featured.map((w, i) => (
-              <Reveal key={w.id} delay={i * 100}>
-                <button
-                  type="button"
-                  className="work-card"
-                  onClick={() => setSelected(w)}
-                  aria-label={`View details: ${w.title} — ${w.category}`}
-                >
-                  <div className="frame">
-                    <img src={w.image} alt={w.alt} loading="lazy" />
-                  </div>
-                  <span className="work-overlay">
-                    <span className="work-title">{w.title}</span>
-                    <span className="work-cat">{w.category}</span>
-                  </span>
-                </button>
-              </Reveal>
-            ))}
+            {featured.map((w, i) => {
+              const wl = workInLang(w, lang)
+              return (
+                <Reveal key={w.id} delay={i * 100}>
+                  <button
+                    type="button"
+                    className="work-card"
+                    onClick={() => setSelected(w)}
+                    aria-label={`${t('viewDetails')}: ${wl.title} — ${wl.category}`}
+                  >
+                    <div className="frame">
+                      <img src={w.image} alt={w.alt} loading="lazy" />
+                    </div>
+                    <span className="work-overlay">
+                      <span className="work-title">{wl.title}</span>
+                      <span className="work-cat">{wl.category}</span>
+                    </span>
+                  </button>
+                </Reveal>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -84,12 +91,12 @@ export default function Home() {
       <section className="section note">
         <div className="container note-inner">
           <Reveal>
-            <p className="eyebrow">A note from the photographer</p>
-            <p className="note-quote">“{site.slogan}”</p>
-            <p className="note-text">{site.about.philosophy[0]}</p>
+            <p className="eyebrow">{t('noteFrom')}</p>
+            <p className="note-quote">“{s.slogan}”</p>
+            <p className="note-text">{s.about.philosophy[0]}</p>
             <div style={{ marginTop: '1.8rem' }}>
               <Link className="btn btn-ghost" to="/about">
-                More about me
+                {t('moreAboutMe')}
               </Link>
             </div>
           </Reveal>

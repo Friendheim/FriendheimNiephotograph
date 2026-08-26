@@ -350,6 +350,24 @@ ul {
   height: 19px;
 }
 
+.lang-toggle {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.lang-toggle:hover {
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+
 /* ---------- 7. Hero (home) ---------- */
 .hero {
   padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2rem, 5vw, 3.5rem);

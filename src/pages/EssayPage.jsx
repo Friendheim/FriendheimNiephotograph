@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import Reveal from '../components/Reveal.jsx'
 import Lightbox from '../components/Lightbox.jsx'
+import { useLang, workInLang } from '../i18n.jsx'
 import { works } from '../data/works.js'
+import { essayZh } from '../data/zh.js'
 
 const find = (k) => works.find((w) => w.id === `../assets/works/${k}.jpg`)
 
@@ -51,54 +53,59 @@ const CHAPTERS = [
 ]
 
 export default function EssayPage() {
+  const { lang, t } = useLang()
   const [selected, setSelected] = useState(null)
   const essayWorks = CHAPTERS.flatMap((c) => c.works.map(find)).filter(Boolean)
+  const zh = lang === 'zh' ? essayZh : null
 
   return (
     <article className="essay">
       <header className="essay-head">
         <div className="container">
           <Reveal>
-            <p className="eyebrow">Essay</p>
-            <h1>The Long Walk</h1>
-            <p className="essay-intro">
-              Photographs from three years of walking — from Nanchang to the end of the world.
-            </p>
+            <p className="eyebrow">{t('essayEyebrow')}</p>
+            <h1>{t('essayH1')}</h1>
+            <p className="essay-intro">{t('essayIntro')}</p>
           </Reveal>
         </div>
       </header>
 
       {CHAPTERS.map((c, i) => {
         const items = c.works.map(find).filter(Boolean)
+        const title = zh ? zh[i].title : c.title
+        const prose = zh ? zh[i].prose : c.prose
         return (
           <section className="essay-chapter" key={c.no}>
             <div className="container">
               <Reveal>
                 <p className="essay-no">{c.no}</p>
-                <h2>{c.title}</h2>
-                <p className="essay-prose">{c.prose}</p>
+                <h2>{title}</h2>
+                <p className="essay-prose">{prose}</p>
               </Reveal>
               <div className={`essay-figures${i % 2 ? ' flipped' : ''}`}>
-                {items.map((w) => (
-                  <Reveal key={w.id} delay={80}>
-                    <figure className="essay-figure">
-                      <button
-                        type="button"
-                        className="work-card"
-                        onClick={() => setSelected(w)}
-                        aria-label={`View details: ${w.title}`}
-                      >
-                        <div className="frame">
-                          <img src={w.image} alt={w.alt} loading="lazy" />
-                        </div>
-                      </button>
-                      <figcaption>
-                        <strong>{w.title}</strong>
-                        {w.location && <span> · {w.location}</span>}
-                      </figcaption>
-                    </figure>
-                  </Reveal>
-                ))}
+                {items.map((w) => {
+                  const wl = workInLang(w, lang)
+                  return (
+                    <Reveal key={w.id} delay={80}>
+                      <figure className="essay-figure">
+                        <button
+                          type="button"
+                          className="work-card"
+                          onClick={() => setSelected(w)}
+                          aria-label={`${t('viewDetails')}: ${wl.title}`}
+                        >
+                          <div className="frame">
+                            <img src={w.image} alt={w.alt} loading="lazy" />
+                          </div>
+                        </button>
+                        <figcaption>
+                          <strong>{wl.title}</strong>
+                          {w.location && <span> · {w.location}</span>}
+                        </figcaption>
+                      </figure>
+                    </Reveal>
+                  )
+                })}
               </div>
             </div>
           </section>
