@@ -71,39 +71,39 @@ const overrides = {
       'Two frames from one dusk at the Seven Sisters: a red phone box against the last of the sky, and far below, white cliffs falling to a shore where a small fire glowed. The sea was doing its quiet work; I did mine.',
   },
   'street/street-01.jpg': {
-    title: 'Light Through the Passage',
+    title: 'Where the Sky Comes Through',
     description:
-      'The buildings closed ranks, and the light escaped through the one gap they left. A single lamp post kept the opening honest.',
+      'The buildings let the sky through for a moment, and I happened to be walking there. Days like these are mostly unremarkable — which is exactly why they are worth keeping.',
   },
   'street/street-02.jpg': {
-    title: 'A Quiet Set Meal',
+    title: 'The Evening Set',
     description:
-      'A set meal at a plain table — grilled fish, rice, soup, the small dishes arranged like a still life that didn’t know it was one.',
+      'Grilled fish, rice, soup — the small dishes arranged the way every dinner is arranged when nobody is watching. A single place setting, a quiet table, and a day that asked nothing of me.',
   },
   'street/street-03.jpg': {
-    title: 'Red Signal at Dusk',
+    title: 'Stop for a Moment',
     description:
-      'At dusk the street becomes an outline drawing. The red signal was the only thing that refused to fade.',
+      'Waiting at a crossing while the sky does its evening work. Some days you notice the red light the way you notice your own breathing — only when you stop.',
   },
   'street/street-04.jpg': {
-    title: 'Poster After Rain',
+    title: 'After Rain, Before Class',
     description:
-      'The bus-stop poster for TU Dresden stayed lit after the rain, yellow against the cooling street. I passed it twice; the second time, I stopped.',
+      'The bus-stop poster for my university stayed lit after the rain. Wet pavement, yellow light, the walk to class — the ordinary machinery of a student’s day, briefly beautiful.',
   },
   'street/street-05.jpg': {
-    title: 'Arrow by the Ramp',
+    title: 'Watch the Step',
     description:
-      'A warning on a warm wall — “Vorsicht Rampe!” — pointing toward a doorway that curves like a question mark. The quietest kind of street photograph: almost nothing, exactly placed.',
+      'A small sign warning about a ramp, on a wall I passed almost every day. I never fell, and I never stopped reading it — some sentences become part of your life without your permission.',
   },
   'street/street-06.jpg': {
-    title: 'Chalk Across the Lecture Hall',
+    title: 'Back Row, Mid-Semester',
     description:
-      'A lecture hall mid-morning: heads bent, chalk moving across green boards. I sat in the back row and kept the noise out of the frame.',
+      'Heads bent, chalk moving across green boards — a lecture hall in the middle of the semester, which is to say, in the middle of my life. I sat in the back row and kept the ordinary: equations, light, the sound of forty notebooks.',
   },
   'street/street-07.jpg': {
-    title: 'Two Glasses at Dinner',
+    title: 'Two Glasses, One Evening',
     description:
-      'Two glasses, two plates, one long conversation. The flash froze the table; everything around it stayed soft and dark, the way good evenings do.',
+      'Two glasses, two plates, and a conversation long enough to let the room go soft around it. Some evenings are the entire reason the other days exist.',
   },
   'travel/travel-01.jpg': {
     title: 'Objects in Warm Light',
@@ -161,14 +161,7 @@ const overrides = {
       'A white bath beyond a dark doorway, a small table, a dark bottle — a still life that was already finished before I arrived.',
   },
 
-  // --- Creative (创作) — experimental posters & collages ---
-  'creative/creative-02.jpg': {
-    title: 'Architecture, Recut and Reframed',
-    description:
-      'This is an edit about translation: one place is tested as photograph, pale wash, diagram, and photograph again. Thin construction lines and generous cream margins make the ordinary square read like a set of competing plans.',
-  },
-
-  // --- Memory (记忆) — a series in two parts ---
+  // --- Memory (记忆) — a series in four parts ---
   'memory/memory-01.jpg': {
     title: 'Memory of the Coast',
     description:
@@ -179,10 +172,15 @@ const overrides = {
     description:
       'A real coast is recorded at dusk — buildings, rocky walls, the sea, and the presence of a person forming a brief moment of the journey. The photograph watches this space with restraint, letting concrete scenery recede into an abstract structure of memory. What remains is not a place, but a proof of existence shaped by light, distance, and solitude.',
   },
-  'creative/creative-06.jpg': {
-    title: 'House in Four Registers',
+  'memory/memory-03.jpg': {
+    title: 'The Square in Memory',
     description:
-      'The house is dismantled into material studies — glass, foliage, shadow, and measured plane. Its repeated placement makes the domestic façade feel less like a fixed object than a proposition continually redrawn.',
+      'One place tested four ways — photograph, pale wash, diagram, photograph again. This is how memory handles a square you once lived near: some views stay sharp, others dissolve, and the same afternoon returns again and again, never quite the same.',
+  },
+  'memory/memory-04.jpg': {
+    title: 'The House, From Memory',
+    description:
+      'The same small house dismantled into glass, foliage, shadow and measured plane. Memory does this to a place you have passed every day — it redraws it each time, until the building becomes less an object than a feeling that keeps its shape.',
   },
 
   // --- Odyssey (奥德赛) — a series in three parts ---
@@ -252,15 +250,14 @@ const modules = import.meta.glob('../assets/works/*/*.{jpg,jpeg,png,webp}', {
 const CATEGORY_LABELS = {
   portrait: 'Faces',
   landscape: 'Landscapes',
-  street: 'Streets',
+  street: 'Days Like These',
   travel: 'Journeys',
-  creative: 'Creative',
   odyssey: 'Odyssey',
   memory: 'Memory',
   frame: 'Outside the Frame',
   before: 'The Before Trilogy',
 }
-const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey', 'memory', 'frame', 'before']
+const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'odyssey', 'memory', 'frame', 'before']
 
 function labelFor(folder) {
   return CATEGORY_LABELS[folder] || folder.charAt(0).toUpperCase() + folder.slice(1)
@@ -322,6 +319,8 @@ const seriesNotes = {
     'The Truman series looks at the distance between the real and the invented in travel — the photographs no longer simply prove "I was here"; they ask: as we keep recording the world, are we seeing what is real, or what we believe to be real?',
   'The Before Trilogy':
     'Three times of day, one question — sunrise, sunset, midnight. The Before Trilogy asks what love looks like between the morning we meet and the hour we finally tell the truth.',
+  'Days Like These':
+    'The ordinary days of a student’s life — meals, lectures, crossings, weather. Not photographs of a life: the life itself, mid-sentence.',
 }
 
 export { works, categories, seriesNotes }

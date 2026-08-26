@@ -122,7 +122,7 @@ app.whenReady().then(async () => {
     }))()`)
     check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
     check('all work images loaded', loadedImgs === EXPECTED_TOTAL, `${loadedImgs}/${EXPECTED_TOTAL}`)
-    check('10 filter buttons', work.filters === 10, work.filters)
+    check('9 filter buttons', work.filters === 9, work.filters)
     await shot(win, 'work-light.png')
 
     // ---------- Category filter ----------
@@ -156,15 +156,15 @@ app.whenReady().then(async () => {
     const closed = await win.webContents.executeJavaScript(`!document.querySelector('.lightbox')`)
     check('Esc closes lightbox', closed)
 
-    // ---------- Creative filter ----------
+    // ---------- Days Like These filter ----------
     await win.webContents.executeJavaScript(
-      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Creative').click()`
+      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Days Like These').click()`
     )
     await wait(700)
-    const creative = await win.webContents.executeJavaScript(`(() => ({
+    const dlt = await win.webContents.executeJavaScript(`(() => ({
       cards: document.querySelectorAll('.masonry .work-card').length,
     }))()`)
-    check('Creative filter matches creative folder', creative.cards === countImages(path.join(WORKS_ROOT, 'creative')), `${creative.cards} cards`)
+    check('Days Like These matches street folder', dlt.cards === countImages(path.join(WORKS_ROOT, 'street')), `${dlt.cards} cards`)
 
     // ---------- Odyssey filter ----------
     await win.webContents.executeJavaScript(
@@ -187,7 +187,7 @@ app.whenReady().then(async () => {
       cards: document.querySelectorAll('.masonry .work-card').length,
       first: (document.querySelector('.masonry .work-title') || {}).textContent || '',
     }))()`)
-    check('Memory filter shows 2 cards', memory.cards === 2, memory.cards)
+    check('Memory filter shows 4 cards', memory.cards === 4, memory.cards)
     check('Memory first title is Memory of the Coast', memory.first === 'Memory of the Coast', memory.first)
 
     // ---------- Outside the Frame filter ----------
