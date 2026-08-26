@@ -369,7 +369,7 @@ const seriesNotes = {
   'Days Like These':
     'The ordinary days of a student’s life — meals, lectures, crossings, weather. Not photographs of a life: the life itself, mid-sentence.',
   'The Ones I Met':
-    'The people I met along the way — a woman by a pillar, a couple under a turning maple, a stranger between stone columns. Portraits that happened because someone paused, not because I asked — and one portrait of me, taken by a friend, to remember that the one holding the camera is part of the story too.',
+    'People I meet along the way — those who paused, those who let me take their picture, and once, a friend who turned the camera on me. The series is never finished: there is always a new face waiting at the next corner.',
   'Places That Held Still':
     'Landscapes that asked me to stand still — a ferry crossing grey water, cliffs at dusk, a frozen road in low sun. The light came, and the place held still long enough for both of us.',
   'Passing Through':
