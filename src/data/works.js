@@ -451,7 +451,7 @@ const notesEn = {
   frame:
     'This series is about the distance between the real and the invented. A photograph used to be proof that I was here; now I ask whether what I saw was what was there, or what I believed to be there. We record the world, and in recording it we make it — and we are made by it in return.',
   before:
-    'Three times of day, one question running beneath them all: from the morning we met to the midnight we finally tell the truth, what does love really look like? At dawn everything is still possible; by dusk the conversation has grown long and warm; at midnight the honest words arrive, and the night holds them. I do not know the whole answer — I am only trying to keep a few of its moments still.',
+    'Three times of day: at dawn everything is still possible; by dusk the conversation has grown long and warm; at midnight the honest words arrive, and the night holds them. From the morning we met to the midnight we finally tell the truth — what does love really look like?',
 }
 
 const seriesNotes = {}
