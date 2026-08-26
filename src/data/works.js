@@ -237,7 +237,7 @@ const overrides = {
   'before/before-03.jpg': {
     title: 'Before Midnight',
     description:
-      'Blue hour, a man and a woman standing side by side with their backs to the camera, watching the wooded view. The day’s performances are over; what remains is the quieter work — remembering why the walk began, and choosing it again in the dark.',
+      'Blue hour, and my grandparents standing side by side with their backs to the camera, watching the wooded view. The day’s performances are over; what remains is the quieter work — remembering why the walk began, and choosing it again in the dark.',
   },
 }
 
