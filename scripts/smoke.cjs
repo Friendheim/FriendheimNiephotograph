@@ -168,8 +168,8 @@ app.whenReady().then(async () => {
       cards: document.querySelectorAll('.masonry .work-card').length,
       first: (document.querySelector('.masonry .work-title') || {}).textContent || '',
     }))()`)
-    check('Memory filter shows 1 card', memory.cards === 1, memory.cards)
-    check('Memory title is Memory of the Coast', memory.first === 'Memory of the Coast', memory.first)
+    check('Memory filter shows 2 cards', memory.cards === 2, memory.cards)
+    check('Memory first title is Memory of the Coast', memory.first === 'Memory of the Coast', memory.first)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

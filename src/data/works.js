@@ -172,22 +172,22 @@ const overrides = {
     description:
       'This is an edit about translation: one place is tested as photograph, pale wash, diagram, and photograph again. Thin construction lines and generous cream margins make the ordinary square read like a set of competing plans.',
   },
-  'creative/creative-03.jpg': {
-    title: 'Afterglow at the Edge',
-    description:
-      'Night is reduced to a few hard silhouettes and a band of ember-colored horizon. Below, the image withdraws twice more, leaving only the house, the lit opening, and a thin line of sea like fragments surviving exposure.',
-  },
   'creative/creative-04.jpg': {
     title: 'Blue Tree, Red Orbit',
     description:
       'The tree is treated as a hinge between atmosphere, reflection, and memory. A pair of red discs interrupts the monochrome field, giving the repeated figure-and-branch motif a measured pulse.',
   },
 
-  // --- Memory (记忆) — a single afterimage of the coast ---
+  // --- Memory (记忆) — a series in two parts ---
   'memory/memory-01.jpg': {
     title: 'Memory of the Coast',
     description:
       'Made on the coast after dusk, the frame holds an isolated house, a distant horizon, white cliffs, and a faint fire glowing in the dark. Nothing was arranged — the photograph only keeps the spatial truths that existed before the light left. As memory settles, the scene draws back into simple lines, colour fields and blank paper: a real place turning into the afterimage it left behind.',
+  },
+  'memory/memory-02.jpg': {
+    title: 'Before It Fades',
+    description:
+      'A real coast is recorded at dusk — buildings, rocky walls, the sea, and the presence of a person forming a brief moment of the journey. The photograph watches this space with restraint, letting concrete scenery recede into an abstract structure of memory. What remains is not a place, but a proof of existence shaped by light, distance, and solitude.',
   },
   'creative/creative-06.jpg': {
     title: 'House in Four Registers',
