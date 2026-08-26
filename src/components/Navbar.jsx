@@ -42,22 +42,20 @@ export default function Navbar() {
                 </NavLink>
               </li>
             ))}
-            <li>
-              <button
-                type="button"
-                className="lang-toggle"
-                onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
-                aria-label={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
-                title={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
-              >
-                {lang === 'zh' ? 'EN' : '中'}
-              </button>
-            </li>
-            <li>
-              <ThemeToggle />
-            </li>
           </ul>
         </nav>
+        <div className="nav-toggles">
+          <button
+            type="button"
+            className="lang-toggle"
+            onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+            aria-label={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
+            title={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
+          >
+            {lang === 'zh' ? 'EN' : '中'}
+          </button>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   )
