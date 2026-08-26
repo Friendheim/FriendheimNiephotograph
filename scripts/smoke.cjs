@@ -137,16 +137,15 @@ app.whenReady().then(async () => {
     const closed = await win.webContents.executeJavaScript(`!document.querySelector('.lightbox')`)
     check('Esc closes lightbox', closed)
 
-    // ---------- Creative empty state ----------
+    // ---------- Creative filter ----------
     await win.webContents.executeJavaScript(
       `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Creative').click()`
     )
     await wait(700)
     const creative = await win.webContents.executeJavaScript(`(() => ({
-      empty: !!document.querySelector('.empty-hint'),
       cards: document.querySelectorAll('.masonry .work-card').length,
     }))()`)
-    check('Creative shows empty hint (no photos yet)', creative.empty && creative.cards === 0)
+    check('Creative filter matches creative folder', creative.cards === countImages(path.join(WORKS_ROOT, 'creative')), `${creative.cards} cards`)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')
