@@ -193,19 +193,19 @@ const overrides = {
       'The house is dismantled into material studies — glass, foliage, shadow, and measured plane. Its repeated placement makes the domestic façade feel less like a fixed object than a proposition continually redrawn.',
   },
   'creative/creative-07.jpg': {
-    title: 'Crowd Entering the Labyrinth',
+    title: 'The Passage',
     description:
-      'A real crossing mutates into an allegorical procession. The painted lower field borrows the crowd’s silhouettes but reroutes them through portals, radial marks, and a central blaze, turning public movement into a mythic threshold.',
+      'A street crowd crosses like travellers threading a strait — converging for a moment, then leaving in different directions. Light and shadow record an ordinary passage, and quietly echo the choices and unknowns that followed Odysseus across his long wandering.',
   },
   'creative/creative-08.jpg': {
-    title: 'Flooded City, Hidden Sanctuary',
+    title: 'The City of Trials',
     description:
-      'Urban infrastructure and ritual architecture occupy the same flooded plane. The gold circle on the right acts as a visual counterweight to the doorway below, while the boat at left introduces a fragile horizontal passage through the vertical city.',
+      'Towers rise into a vast spatial structure — the labyrinth of the modern world. The scale of the buildings presses down on those walking beneath them, while hidden mythic forms remind us that every city holds its own trial, its own waiting maze.',
   },
   'creative/creative-09.jpg': {
-    title: 'Vortex Beneath the Skyline',
+    title: 'The Island Beyond',
     description:
-      'The skyline appears stable only until the water opens beneath it. A vortex occupies the center of the composition, pulling boat, city, and architectural portals into one engineered image of gravity and passage.',
+      'Still water keeps its careful distance from the far city, the way Odysseus paused to regard an unknown island. There is no destination here — only waiting, watching, and the imagining of what lies beyond.',
   },
   'creative/creative-10.jpg': {
     title: 'Spire, Weather, Memory',
