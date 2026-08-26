@@ -195,7 +195,7 @@ app.whenReady().then(async () => {
       first: (document.querySelector('.masonry .work-title') || {}).textContent || '',
     }))()`)
     check('Outside the Frame shows 4 cards', frame.cards === 4, frame.cards)
-    check('Outside the Frame first title is A Pause in the City', frame.first === 'A Pause in the City', frame.first)
+    check('Outside the Frame first title is Spire Through Three Realities', frame.first === 'Spire Through Three Realities', frame.first)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

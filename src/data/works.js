@@ -203,9 +203,9 @@ const overrides = {
   },
   // --- Outside the Frame — four notes on being watched ---
   'frame/frame-01.jpg': {
-    title: 'A Pause in the City',
+    title: 'Spire Through Three Realities',
     description:
-      'The square keeps exactly what it was. Old buildings, a spire, streets, cars and cafés make up an ordinary afternoon — nothing special happens, and people pass at their own pace. But when the lens stays, a plain afternoon is kept. Like certain moments in Truman’s life, what matters is not the stage, but that someone truly existed on it.',
+      'The same civic scene is stacked into three registers, shifting from observed architecture to dissolved pigment and line. Repetition turns the spire into a visual axis while the square below flickers between document and recollection.',
   },
   'frame/frame-02.jpg': {
     title: 'Is the Distance Real?',
