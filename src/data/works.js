@@ -185,6 +185,13 @@ const overrides = {
     description:
       'A white bath beyond a dark doorway, a small table, a dark bottle — a still life that was already finished before I arrived.',
   },
+  'travel/travel-12.jpg': {
+    title: 'Arrival at the End of the World',
+    location: 'Ushuaia, Argentina',
+    date: 'July 15, 2026',
+    description:
+      'Finally — the end of the world. The plane fought through rough air, and when it landed the whole cabin applauded, like a scene from a film. The door opened onto golden light, and an iceberg rose to meet us. Ushuaia.',
+  },
 
   // --- Memory (记忆) — a series in four parts ---
   'memory/memory-01.jpg': {
