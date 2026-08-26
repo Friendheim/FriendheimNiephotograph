@@ -482,6 +482,12 @@ ul {
   transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
+.featured-grid .work-card img {
+  /* keep every featured frame the same 16:9 size even if the source ratio differs */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .work-card:hover img {
   transform: scale(1.045);
 }

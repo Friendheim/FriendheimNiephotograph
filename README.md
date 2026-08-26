@@ -31,9 +31,8 @@ Requirements: Node.js 18+ (tested with Node 24 / npm 11).
 │   └── avatar.jpg              #   about page portrait
 ├── src/assets/works/           # ← ALL PORTFOLIO PHOTOS (auto-detected)
 │   ├── portrait/               #   photos in here → "Portrait" category
-│   ├── landscape/              #   → "Landscape"
 │   ├── street/                 #   → "Street"
-│   └── travel/                 #   → "Travel"
+│   └── travel/                 #   → "Travel" (incl. former landscape shots)
 ├── scripts/
 │   └── download-images.mjs     # one-off helper to (re)fetch placeholders
 └── src/
@@ -47,7 +46,7 @@ Requirements: Node.js 18+ (tested with Node 24 / npm 11).
 ## 🖼 Using your own photos (auto-detected)
 
 **Portfolio photos** — just drop files into the category folders
-(`src/assets/works/portrait/`, `landscape/`, `street/`, `travel/`).
+(`src/assets/works/portrait/`, `street/`, `travel/`).
 Every `.jpg` / `.jpeg` / `.png` / `.webp` you put there appears on the
 site automatically — no code to touch, any number of photos:
 

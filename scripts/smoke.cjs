@@ -147,7 +147,7 @@ app.whenReady().then(async () => {
     }))()`)
     check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
     check('all work images loaded', loadedImgs === EXPECTED_TOTAL, `${loadedImgs}/${EXPECTED_TOTAL}`)
-    check('9 filter buttons', work.filters === 9, work.filters)
+    check('8 filter buttons', work.filters === 8, work.filters)
     await shot(win, 'work-light.png')
 
     // ---------- Category filter ----------

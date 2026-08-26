@@ -46,22 +46,22 @@ const overrides = {
     description:
       'A man holding a paintbrush stands on a raised structural beam beside an orange bucket. Seen from below, worker and dark framework are silhouetted against a pale, partly cloudy sky; strong diagonals give the ordinary task a spare, monumental presence.',
   },
-  'landscape/landscape-01.jpg': {
+  'travel/landscape-01.jpg': {
     title: 'The White Ferry',
     description:
       'A white ferry making its unhurried way across grey water, the mountains barely sure they exist. The overcast held the light low and silver, the way sea days should.',
   },
-  'landscape/landscape-02.jpg': {
+  'travel/landscape-02.jpg': {
     title: 'House Beside the Pines',
     description:
       'The pines stand guard, and the half-timbered houses keep their counsel behind them. A muted sky, a patient street — the landscape waiting for winter to finish.',
   },
-  'landscape/landscape-03.jpg': {
+  'travel/landscape-03.jpg': {
     title: 'Sun Over Frozen Road',
     description:
       'Low sun across a frozen road, long shadows leaning away from the cold. The yellow car is the only thing in the frame willing to hurry.',
   },
-  'landscape/landscape-04.jpg': {
+  'travel/landscape-04.jpg': {
     title: 'Chalk Cliffs at Dusk',
     description:
       'Two frames from one dusk at the Seven Sisters: a red phone box against the last of the sky, and far below, white cliffs falling to a shore where a small fire glowed. The sea was doing its quiet work; I did mine.',
@@ -324,7 +324,6 @@ const modules = import.meta.glob('../assets/works/*/*.{jpg,jpeg,png,webp}', {
 // folder key → short editorial theme shown in the UI
 const CATEGORY_LABELS = {
   portrait: 'The Ones I Met',
-  landscape: 'Places That Held Still',
   street: 'Days Like These',
   travel: 'Passing Through',
   odyssey: 'Odyssey',
@@ -332,7 +331,7 @@ const CATEGORY_LABELS = {
   frame: 'Outside the Frame',
   before: 'The Before Trilogy',
 }
-const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'odyssey', 'memory', 'frame', 'before']
+const KNOWN_ORDER = ['portrait', 'street', 'travel', 'odyssey', 'memory', 'frame', 'before']
 
 function labelFor(folder) {
   return CATEGORY_LABELS[folder] || folder.charAt(0).toUpperCase() + folder.slice(1)
@@ -365,10 +364,10 @@ const placePins = {
   'street/street-08.jpg': { location: 'Dresden, Germany', coords: [51.134, 13.767] },
   'street/street-09.jpg': { location: 'Macau, China', coords: [22.1987, 113.5439] },
   'street/street-13.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0389, 102.7183] },
-  'landscape/landscape-01.jpg': { location: 'Dali, Yunnan, China', coords: [25.606, 100.267] },
-  'landscape/landscape-02.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
-  'landscape/landscape-03.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
-  'landscape/landscape-04.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.76, 0.202] },
+  'travel/landscape-01.jpg': { location: 'Dali, Yunnan, China', coords: [25.606, 100.267] },
+  'travel/landscape-02.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
+  'travel/landscape-03.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
+  'travel/landscape-04.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.76, 0.202] },
   'memory/memory-01.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.762, 0.205] },
   'memory/memory-03.jpg': { location: 'Riga, Latvia', coords: [56.9496, 24.1052] },
   'odyssey/odyssey-03.jpg': { location: 'Nanchang, Jiangxi, China', coords: [28.682, 115.858] },
@@ -442,12 +441,10 @@ const filters = [
 const notesEn = {
   portrait:
     'Some of them I spoke with for an hour, some for the length of a red light. They paused, I raised the camera, and something small and true passed between us — a face, before it remembered it was being photographed. There will be more of them. The series is never finished, and I am glad of that: it means the walking goes on.',
-  landscape:
-    'I have learned that landscapes do not wait for anyone, yet they will hold still for someone patient. The ferry crossed grey water and I held my breath for the light; the cliffs kept their dusk until I raised the camera; the frozen road kept its long shadows in the low sun. When the light fell just right, I pressed the shutter — the rest, I left to the photograph.',
   street:
     'This is what a student’s life looks like when nobody is performing it: a set meal, a red light, the back row of a lecture hall, rain on the way to class. I did not arrange these days; I only kept them. They are not photographs of a life — they are the life itself, caught mid-sentence.',
   travel:
-    'Between semesters I pack a small bag and a film camera, and I go. The shops, the hotel rooms, the train windows, the chairlift climbing toward snow — I pass through them the way you pass through a conversation you do not want to end. I was lucky to be allowed in, however briefly.',
+    'Between semesters I pack a small bag and a film camera, and I go. The shops, the hotel rooms, the train windows, the chairlift climbing toward snow — I pass through them the way you pass through a conversation you do not want to end. And I have learned that places do not wait for anyone, yet they will hold still for someone patient: when the light fell just right, I pressed the shutter — the rest, I left to the photograph. I was lucky to be allowed in, however briefly.',
   odyssey:
     'After Homer: the street crowd is a strait to cross, the city a labyrinth, the horizon an island we will never reach. I retell ordinary journeys as myths, and find the myths waiting again in ordinary days — which is, I think, what myths are for.',
   memory:

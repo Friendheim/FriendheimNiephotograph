@@ -8,7 +8,7 @@ import { works } from '../data/works.js'
 // Six featured frames with an identical natural aspect ratio (16:9) — no cropping.
 const FEATURED_KEYS = [
   '../assets/works/travel/travel-09.jpg',
-  '../assets/works/travel/travel-07.jpg',
+  '../assets/works/travel/travel-12.jpg',
   '../assets/works/travel/travel-04.jpg',
   '../assets/works/travel/travel-10.jpg',
   '../assets/works/street/street-02.jpg',
