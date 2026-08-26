@@ -34,7 +34,7 @@ export const site = {
     ],
     equipment: [
       'Nikon 35Ti — 35mm film compact, for slow days',
-      'Fujifilm X-T5 — 23mm f/1.4 & 56mm f/1.2',
+      'Fujifilm X-Pro2 — 23mm f/1.4 & 56mm f/1.2',
       'Fujifilm X100VI — the everyday camera',
       'Minimal post-processing — honest scans, light edits',
     ],
