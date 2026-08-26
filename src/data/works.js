@@ -241,8 +241,9 @@ const CATEGORY_LABELS = {
   odyssey: 'Odyssey',
   memory: 'Memory',
   frame: 'Outside the Frame',
+  before: 'The Before Trilogy',
 }
-const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey', 'memory', 'frame']
+const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey', 'memory', 'frame', 'before']
 
 function labelFor(folder) {
   return CATEGORY_LABELS[folder] || folder.charAt(0).toUpperCase() + folder.slice(1)
