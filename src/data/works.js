@@ -211,11 +211,6 @@ const overrides = {
     description:
       'Still water keeps its careful distance from the far city, the way Odysseus paused to regard an unknown island. There is no destination here — only waiting, watching, and the imagining of what lies beyond.',
   },
-  'creative/creative-10.jpg': {
-    title: 'Spire, Weather, Memory',
-    description:
-      'The church tower is repeated through daylight, abstraction, and rain-darkened reflection. Scraped textures, drifting birds, and handwritten fragments make the square feel like an archive whose views have been overlaid rather than replaced.',
-  },
   'creative/creative-11.jpg': {
     title: 'Ferry Against the Mountain',
     description:
