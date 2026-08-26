@@ -80,7 +80,7 @@ app.whenReady().then(async () => {
       const h2 = document.querySelector('.lightbox-meta h2')
       return { open: !!d, title: h2 && h2.textContent.trim() }
     })()`)
-    check('home featured opens lightbox', homeLb.open && homeLb.title === 'Wrist in Blue', homeLb.title)
+    check('home featured opens lightbox', homeLb.open && homeLb.title === 'Blue Water From Above', homeLb.title)
     await win.webContents.executeJavaScript(
       `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))`
     )

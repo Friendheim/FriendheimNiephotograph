@@ -7,12 +7,12 @@ import { works } from '../data/works.js'
 
 // Six featured frames with an identical natural aspect ratio (16:9) — no cropping.
 const FEATURED_KEYS = [
-  '../assets/works/portrait/portrait-01.jpg',
-  '../assets/works/portrait/portrait-04.jpg',
+  '../assets/works/travel/travel-09.jpg',
+  '../assets/works/travel/travel-07.jpg',
+  '../assets/works/travel/travel-04.jpg',
+  '../assets/works/travel/travel-10.jpg',
   '../assets/works/street/street-02.jpg',
   '../assets/works/street/street-03.jpg',
-  '../assets/works/travel/travel-01.jpg',
-  '../assets/works/travel/travel-02.jpg',
 ]
 
 export default function Home() {
