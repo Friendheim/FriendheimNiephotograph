@@ -22,7 +22,6 @@
   {"file": "street/street-07.jpg", "title": "...", "subject": "...", "description": "..."},
   {"file": "travel/travel-01.jpg", "title": "...", "subject": "...", "description": "..."},
   {"file": "travel/travel-02.jpg", "title": "...", "subject": "...", "description": "..."},
-  {"file": "travel/travel-03.jpg", "title": "...", "subject": "...", "description": "..."},
   {"file": "travel/travel-04.jpg", "title": "...", "subject": "...", "description": "..."},
   {"file": "travel/travel-05.jpg", "title": "...", "subject": "...", "description": "..."},
   {"file": "travel/travel-06.jpg", "title": "...", "subject": "...", "description": "..."},

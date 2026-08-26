@@ -141,11 +141,6 @@ const overrides = {
     description:
       'A red board covered in small ceramic faces, each one watching the shop in its own way. I like things that look back.',
   },
-  'travel/travel-03.jpg': {
-    title: 'Houses at the Forest Edge',
-    description:
-      'The village keeps its timber houses close, and the forest presses in from the edge of the frame. They seem to have agreed to tolerate each other.',
-  },
   'travel/travel-04.jpg': {
     title: 'Window Across the Room',
     description:

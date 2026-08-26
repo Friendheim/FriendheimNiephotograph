@@ -182,11 +182,6 @@ export const workZh = {
     description:
       '一块红色展板上摆满了小小的陶瓷面孔，每张都以自己的方式注视着店铺。我喜欢会回望你的东西。',
   },
-  'travel/travel-03.jpg': {
-    title: '林缘的木屋',
-    description:
-      '村庄把木屋收拢在近旁，森林从画面边缘压过来。它们似乎达成了彼此容忍的协议。',
-  },
   'travel/travel-04.jpg': {
     title: '房间对面的窗',
     description:
