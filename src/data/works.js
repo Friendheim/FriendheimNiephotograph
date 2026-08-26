@@ -31,9 +31,9 @@ const overrides = {
       'She stood by the granite pillar longer than anyone expected, sunglasses on against a grey sky. I waited too, and the street gave us this small, still exchange.',
   },
   'portrait/portrait-03.jpg': {
-    title: 'Bougainvillea and a Camera',
+    title: 'The Photographer, Photographed',
     description:
-      'A vintage camera in young hands, pink bougainvillea tumbling overhead, and behind him a brand that has outlived half a century of seasons. Time, in one frame, at three different speeds.',
+      'A rare portrait of the photographer himself, taken by a friend — his Fujifilm X100VI in hand, pink bougainvillea tumbling overhead, and behind him a brand that has outlived half a century of seasons. Three speeds of time in one frame: the flower, the camera, and the young man who is usually the one behind the lens.',
   },
   'portrait/portrait-04.jpg': {
     title: 'Under the Turning Maple',
@@ -362,11 +362,15 @@ const seriesNotes = {
   'Days Like These':
     'The ordinary days of a student’s life — meals, lectures, crossings, weather. Not photographs of a life: the life itself, mid-sentence.',
   'The Ones I Met':
-    'The people I met along the way — a woman by a pillar, a young man with a vintage camera, a couple under a turning maple. Portraits that happened because someone paused, not because I asked.',
+    'The people I met along the way — a woman by a pillar, a couple under a turning maple, a stranger between stone columns. Portraits that happened because someone paused, not because I asked — and one portrait of me, taken by a friend, to remember that the one holding the camera is part of the story too.',
   'Places That Held Still':
     'Landscapes that asked me to stand still — a ferry crossing grey water, cliffs at dusk, a frozen road in low sun. The light came, and the place held still long enough for both of us.',
   'Passing Through':
     'Between semesters, a small bag and a film camera — shops, hotel rooms, train windows, one chairlift toward the snow. Places I was lucky enough to pass through.',
+  'Odyssey':
+    'A series after Homer — a street crowd as a strait to cross, a city as a labyrinth, a horizon as an island never reached. Every journey retold as myth; every myth found again in an ordinary day.',
+  'Memory':
+    'Places that exist twice — once as light, once as recollection. The coast, the square, the house: memory redraws them until they become less locations than feelings that keep their shape.',
 }
 
 export { works, categories, seriesNotes }
