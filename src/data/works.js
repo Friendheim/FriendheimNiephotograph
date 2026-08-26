@@ -160,6 +160,68 @@ const overrides = {
     description:
       'A white bath beyond a dark doorway, a small table, a dark bottle — a still life that was already finished before I arrived.',
   },
+
+  // --- Creative (创作) — experimental posters & collages ---
+  'creative/creative-01.jpg': {
+    title: 'Spire Through Three Realities',
+    description:
+      'The same civic scene is stacked into three registers, shifting from observed architecture to dissolved pigment and line. Repetition turns the spire into a visual axis while the square below flickers between document and recollection.',
+  },
+  'creative/creative-02.jpg': {
+    title: 'Architecture, Recut and Reframed',
+    description:
+      'This is an edit about translation: one place is tested as photograph, pale wash, diagram, and photograph again. Thin construction lines and generous cream margins make the ordinary square read like a set of competing plans.',
+  },
+  'creative/creative-03.jpg': {
+    title: 'Afterglow at the Edge',
+    description:
+      'Night is reduced to a few hard silhouettes and a band of ember-colored horizon. Below, the image withdraws twice more, leaving only the house, the lit opening, and a thin line of sea like fragments surviving exposure.',
+  },
+  'creative/creative-04.jpg': {
+    title: 'Blue Tree, Red Orbit',
+    description:
+      'The tree is treated as a hinge between atmosphere, reflection, and memory. A pair of red discs interrupts the monochrome field, giving the repeated figure-and-branch motif a measured pulse.',
+  },
+  'creative/creative-05.jpg': {
+    title: 'Cliffside Fire Sequence',
+    description:
+      'Scale does the storytelling here: the imposing cliff contracts until the campfire becomes the dominant mark. The sequence moves from cinematic darkness toward near-erasure, preserving only the route of the shore and its warm point of human presence.',
+  },
+  'creative/creative-06.jpg': {
+    title: 'House in Four Registers',
+    description:
+      'The house is dismantled into material studies — glass, foliage, shadow, and measured plane. Its repeated placement makes the domestic façade feel less like a fixed object than a proposition continually redrawn.',
+  },
+  'creative/creative-07.jpg': {
+    title: 'Crowd Entering the Labyrinth',
+    description:
+      'A real crossing mutates into an allegorical procession. The painted lower field borrows the crowd’s silhouettes but reroutes them through portals, radial marks, and a central blaze, turning public movement into a mythic threshold.',
+  },
+  'creative/creative-08.jpg': {
+    title: 'Flooded City, Hidden Sanctuary',
+    description:
+      'Urban infrastructure and ritual architecture occupy the same flooded plane. The gold circle on the right acts as a visual counterweight to the doorway below, while the boat at left introduces a fragile horizontal passage through the vertical city.',
+  },
+  'creative/creative-09.jpg': {
+    title: 'Vortex Beneath the Skyline',
+    description:
+      'The skyline appears stable only until the water opens beneath it. A vortex occupies the center of the composition, pulling boat, city, and architectural portals into one engineered image of gravity and passage.',
+  },
+  'creative/creative-10.jpg': {
+    title: 'Spire, Weather, Memory',
+    description:
+      'The church tower is repeated through daylight, abstraction, and rain-darkened reflection. Scraped textures, drifting birds, and handwritten fragments make the square feel like an archive whose views have been overlaid rather than replaced.',
+  },
+  'creative/creative-11.jpg': {
+    title: 'Ferry Against the Mountain',
+    description:
+      'I built the image around a single departure point: the ferry’s blunt white hull set against serrated peaks. The painted echoes soften the photographic interval, while the marginal handwriting turns the harbor into a page of travel notes.',
+  },
+  'creative/creative-12.jpg': {
+    title: 'Reader Across Three Rooms',
+    description:
+      'Three bodies share one room but occupy different tempos of attention. The open book anchors the center, while lamps, wallpaper, and the tiny pavilion at the bottom edge extend the interior into a constructed world of study and withdrawal.',
+  },
 }
 
 // --- Auto-detect every photo in the category folders ---
