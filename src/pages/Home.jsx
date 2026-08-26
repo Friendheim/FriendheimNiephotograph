@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal.jsx'
+import Lightbox from '../components/Lightbox.jsx'
 import { site } from '../data/site.js'
 import { works } from '../data/works.js'
 
 export default function Home() {
   const featured = works.slice(0, 6)
+  const [selected, setSelected] = useState(null)
 
   return (
     <>
@@ -33,7 +36,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Selected work ---------- */}
+      {/* ---------- Selected frames ---------- */}
       <section className="section featured">
         <div className="container">
           <Reveal>
@@ -47,7 +50,12 @@ export default function Home() {
           <div className="featured-grid">
             {featured.map((w, i) => (
               <Reveal key={w.id} delay={i * 100}>
-                <Link to="/work" className="work-card" aria-label={`${w.title} — ${w.category}`}>
+                <button
+                  type="button"
+                  className="work-card"
+                  onClick={() => setSelected(w)}
+                  aria-label={`View details: ${w.title} — ${w.category}`}
+                >
                   <div className="frame">
                     <img src={w.image} alt={w.alt} loading="lazy" />
                   </div>
@@ -55,7 +63,7 @@ export default function Home() {
                     <span className="work-title">{w.title}</span>
                     <span className="work-cat">{w.category}</span>
                   </span>
-                </Link>
+                </button>
               </Reveal>
             ))}
           </div>
@@ -77,6 +85,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {selected && <Lightbox work={selected} onClose={() => setSelected(null)} />}
     </>
   )
 }

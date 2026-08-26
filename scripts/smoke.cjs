@@ -71,6 +71,20 @@ app.whenReady().then(async () => {
     check('slogan shown', home.slogan === 'Quiet moments, honestly observed.', home.slogan)
     check('hero image loads', home.heroLoaded)
     check('6 featured cards', home.workCards === 6, home.workCards)
+
+    // ---------- Home featured lightbox ----------
+    await win.webContents.executeJavaScript(`document.querySelector('.featured-grid .work-card').click()`)
+    await wait(600)
+    const homeLb = await win.webContents.executeJavaScript(`(() => {
+      const d = document.querySelector('.lightbox')
+      const h2 = document.querySelector('.lightbox-meta h2')
+      return { open: !!d, title: h2 && h2.textContent.trim() }
+    })()`)
+    check('home featured opens lightbox', homeLb.open && homeLb.title === 'Wrist in Blue', homeLb.title)
+    await win.webContents.executeJavaScript(
+      `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))`
+    )
+    await wait(300)
     await shot(win, 'home-light.png')
 
     // ---------- Theme toggle ----------
