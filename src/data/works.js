@@ -206,7 +206,7 @@ const overrides = {
   'travel/travel-15.jpg': {
     title: 'Wandering: Specific And Subtle Joys',
     description:
-      'A person holds open an illustrated magazine from a flight, with a bilingual article about wandering. Warm, shallow focus softens the photographs and surrounding text while leaving the article title relatively clear. Fingers resting along the lower pages give the quiet editorial scene a tactile, unhurried quality.',
+      'A person holds open an in-flight magazine with a bilingual article about wandering. Warm, shallow focus softens the photographs and surrounding text while leaving the article title relatively clear. Fingers resting along the lower pages give the quiet editorial scene a tactile, unhurried quality.',
   },
   'travel/travel-16.jpg': {
     title: 'Holding the Last Light',

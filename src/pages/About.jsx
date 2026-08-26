@@ -12,42 +12,42 @@ const CHAPTERS = [
     no: 'I',
     title: 'Departure',
     prose:
-      'It began in Nanchang — my first two years at university, the camera still new, pointing at everything the way you point at everything when you are just beginning to see. I found a magazine about wandering and read it slowly, like a promise. Then came the streets of Kunming, the blue hour of Xiamen — places I did not yet know I was leaving.',
+      'It began in Nanchang — my first two years at university, the camera still new, and so was I, pointing it at everything the way you do when you are just beginning to see. I found a magazine about wandering and read it slowly, like a promise. Then came the streets of Kunming, the blue hour of Xiamen — places I did not yet know I was leaving.',
     works: ['travel/travel-15', 'street/street-01', 'travel/travel-10'],
   },
   {
     no: 'II',
     title: 'Arrival',
     prose:
-      'Dresden arrived slowly — first as a name, then as streets I had to learn by walking. The university taught me computer engineering; the streets taught me patience. Somewhere between them, the camera became less a toy and more a way of paying attention.',
+      'Dresden arrived slowly — first as a name, then as streets I had to learn by walking. The university taught me computer engineering; the streets taught me patience. Somewhere between the two, the camera slowly stopped being a toy and became a way of paying attention.',
     works: ['street/street-04', 'portrait/portrait-03', 'travel/travel-16'],
   },
   {
     no: 'III',
     title: 'The Ordinary Days',
     prose:
-      'A set meal, a red light, a back row in a lecture hall. Days like these are worth keeping precisely because nothing performs for the camera. This is what a life looks like mid-sentence.',
+      'A set meal, a red light, a back row in a lecture hall. Days like these are worth keeping precisely because they never perform for the camera. This is what a life looks like mid-sentence.',
     works: ['street/street-02', 'street/street-03', 'street/street-06'],
   },
   {
     no: 'IV',
     title: 'Passing Through',
     prose:
-      'Between semesters I travel light: a small bag, a film camera, and the conviction that the next corner is worth turning. A clock tower against the ironwork, the white cliffs at dusk, a chairlift climbing toward snow — and my X-Pro2 resting on my knee between stations, waiting for the next window.',
+      'Between semesters I travel light: a small bag, a film camera, and the quiet conviction that the next corner is worth turning. A clock tower against the ironwork, the white cliffs at dusk, a chairlift climbing toward snow — and my X-Pro2 resting on my knee between stations, waiting for the next window.',
     works: ['street/street-09', 'landscape/landscape-04', 'travel/travel-06', 'travel/travel-17'],
   },
   {
     no: 'V',
     title: 'The End of the World',
     prose:
-      'The plane fought through rough air, and when it landed the whole cabin applauded. Ushuaia — golden light, an iceberg rising to meet us. The mountains kept arriving for days after: light crossing the snow, a peak above the town. I had walked to the end of the map, and the camera was still in my hand.',
+      'The plane fought through rough air, and when it landed the whole cabin applauded. Ushuaia — golden light, an iceberg rising to meet us. The mountains kept arriving for days afterwards: light crossing the snow, a peak above the town. I had walked to the end of the map, and the camera was still in my hand.',
     works: ['travel/travel-12', 'travel/travel-13', 'travel/travel-14'],
   },
   {
     no: 'VI',
     title: 'What Remains',
     prose:
-      'The work keeps pointing back to the same questions: what is remembered, what is watched, what is true. My grandparents standing in the blue hour; a coast turning into afterimages; a dream of photographs that could one day stand beside the greats of Magnum. The walk is not finished — there is always a new face waiting at the next corner.',
+      'The work keeps pointing back to the same questions: what is remembered, what is watched, what is true. My grandparents standing in the blue hour; a coast turning into afterimages; and a dream — photographs that might one day stand beside the greats of Magnum. The walk is not finished — there is always a new face waiting at the next corner.',
     works: ['memory/memory-01', 'before/before-03', 'odyssey/odyssey-01'],
   },
 ]
