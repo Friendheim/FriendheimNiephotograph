@@ -103,7 +103,7 @@ app.whenReady().then(async () => {
     }))()`)
     check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
     check('all work images loaded', work.imgs === EXPECTED_TOTAL, `${work.imgs}/${EXPECTED_TOTAL}`)
-    check('7 filter buttons', work.filters === 7, work.filters)
+    check('8 filter buttons', work.filters === 8, work.filters)
     await shot(win, 'work-light.png')
 
     // ---------- Category filter ----------
@@ -158,6 +158,18 @@ app.whenReady().then(async () => {
     }))()`)
     check('Odyssey filter matches odyssey folder', odyssey.cards === countImages(path.join(WORKS_ROOT, 'odyssey')), `${odyssey.cards} cards`)
     check('Odyssey first title is The Passage', odyssey.first === 'The Passage', odyssey.first)
+
+    // ---------- Memory filter ----------
+    await win.webContents.executeJavaScript(
+      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Memory').click()`
+    )
+    await wait(700)
+    const memory = await win.webContents.executeJavaScript(`(() => ({
+      cards: document.querySelectorAll('.masonry .work-card').length,
+      first: (document.querySelector('.masonry .work-title') || {}).textContent || '',
+    }))()`)
+    check('Memory filter shows 1 card', memory.cards === 1, memory.cards)
+    check('Memory title is Memory of the Coast', memory.first === 'Memory of the Coast', memory.first)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

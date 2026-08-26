@@ -182,10 +182,12 @@ const overrides = {
     description:
       'The tree is treated as a hinge between atmosphere, reflection, and memory. A pair of red discs interrupts the monochrome field, giving the repeated figure-and-branch motif a measured pulse.',
   },
-  'creative/creative-05.jpg': {
-    title: 'Cliffside Fire Sequence',
+
+  // --- Memory (记忆) — a single afterimage of the coast ---
+  'memory/memory-01.jpg': {
+    title: 'Memory of the Coast',
     description:
-      'Scale does the storytelling here: the imposing cliff contracts until the campfire becomes the dominant mark. The sequence moves from cinematic darkness toward near-erasure, preserving only the route of the shore and its warm point of human presence.',
+      'Made on the coast after dusk, the frame holds an isolated house, a distant horizon, white cliffs, and a faint fire glowing in the dark. Nothing was arranged — the photograph only keeps the spatial truths that existed before the light left. As memory settles, the scene draws back into simple lines, colour fields and blank paper: a real place turning into the afterimage it left behind.',
   },
   'creative/creative-06.jpg': {
     title: 'House in Four Registers',
@@ -241,8 +243,9 @@ const CATEGORY_LABELS = {
   travel: 'Journeys',
   creative: 'Creative',
   odyssey: 'Odyssey',
+  memory: 'Memory',
 }
-const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey']
+const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey', 'memory']
 
 function labelFor(folder) {
   return CATEGORY_LABELS[folder] || folder.charAt(0).toUpperCase() + folder.slice(1)
