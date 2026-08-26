@@ -211,7 +211,7 @@ app.whenReady().then(async () => {
       cards: document.querySelectorAll('.masonry .work-card').length,
       note: !!document.querySelector('.series-note'),
     }))()`)
-    check('Before Trilogy shows 5 cards + series note', before.cards === 5 && before.note, before.cards)
+    check('Before Trilogy shows 6 cards + series note', before.cards === 6 && before.note, before.cards)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

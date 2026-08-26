@@ -45,11 +45,6 @@ const overrides = {
     description:
       'The columns divided the afternoon into quiet sections, and he stood exactly where the light let him. A turquoise bus passed in a hurry; he did not.',
   },
-  'portrait/portrait-06.jpg': {
-    title: 'Walking Hand in Hand',
-    description:
-      'Hand in hand down George-Bähr-Straße, dappled chestnut light falling on their shoulders. I was behind them, which felt like the right place to be.',
-  },
   'landscape/landscape-01.jpg': {
     title: 'The White Ferry',
     description:
@@ -276,6 +271,11 @@ const overrides = {
     title: 'Between Passing Figures',
     description:
       'Daylight, and a couple holding their own small clearing among the trees while the world passes blurred in front of them. Dressed like it matters, standing close like it matters — some afternoons the whole story fits in one held pose.',
+  },
+  'before/before-06.jpg': {
+    title: 'Walking Hand in Hand',
+    description:
+      'Hand in hand down George-Bähr-Straße, dappled chestnut light falling on their shoulders. I was behind them, which felt like the right place to be.',
   },
 }
 
