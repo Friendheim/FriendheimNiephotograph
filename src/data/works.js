@@ -404,6 +404,8 @@ const works = Object.entries(modules)
       date: override.date || '',
       description: override.description || '',
       descriptionZh: zh.description || override.description || '',
+      thanks: override.thanks || '',
+      thanksZh: zh.thanks || override.thanks || '',
       image: url,
       coords: place.coords || override.coords || null,
       alt: override.alt || `${override.title || humanizeTitle(filename)} — ${category} photograph`,
