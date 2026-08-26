@@ -434,12 +434,6 @@ ul {
   gap: 1.3rem;
 }
 
-/* Featured cards use a near-square crop so the strip reads as one even row */
-.featured-grid .work-card img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
 /* ---------- 9. Work card (shared) ---------- */
 .work-card {
   position: relative;

@@ -5,8 +5,18 @@ import Lightbox from '../components/Lightbox.jsx'
 import { site } from '../data/site.js'
 import { works } from '../data/works.js'
 
+// Six featured frames with an identical natural aspect ratio (16:9) — no cropping.
+const FEATURED_KEYS = [
+  '../assets/works/portrait/portrait-01.jpg',
+  '../assets/works/portrait/portrait-04.jpg',
+  '../assets/works/street/street-02.jpg',
+  '../assets/works/street/street-03.jpg',
+  '../assets/works/travel/travel-01.jpg',
+  '../assets/works/travel/travel-02.jpg',
+]
+
 export default function Home() {
-  const featured = works.slice(0, 6)
+  const featured = FEATURED_KEYS.map((k) => works.find((w) => w.id === k)).filter(Boolean)
   const [selected, setSelected] = useState(null)
 
   return (
