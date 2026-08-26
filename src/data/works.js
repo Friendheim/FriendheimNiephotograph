@@ -9,7 +9,7 @@ const overrides = {
   'portrait/portrait-01.jpg': {
     title: 'Wrist in Blue',
     description:
-      'Blue sleeve, and a wrist dressed in small keepsakes — a cinnabar charm blessed in prayer, silver, turquoise — each one a story I will never be told. The garden behind melts into a green murmur. Some portraits don’t need a face.',
+      'Blue sleeve, and a wrist dressed in small keepsakes — a cinnabar charm, silver, turquoise — each one a story I will never be told. The garden behind melts into a green murmur. Some portraits don’t need a face.',
   },
   'portrait/portrait-02.jpg': {
     title: 'Woman by the Pillar',
@@ -19,7 +19,7 @@ const overrides = {
   'portrait/portrait-03.jpg': {
     title: 'The Photographer, Photographed',
     description:
-      'A rare portrait of the photographer himself, taken by a friend — his Fujifilm X100VI in hand, pink bougainvillea tumbling overhead, and behind him a brand that has outlived half a century of seasons. Three speeds of time in one frame: the flower, the camera, and the young man who is usually the one behind the lens.',
+      'A rare portrait of the photographer himself, taken by a friend — his camera in hand, red bougainvillea tumbling overhead, and behind him a brand that has outlived half a century of seasons. Three speeds of time in one frame: the flower, the camera, and the young man who is usually the one behind the lens.',
   },
   'portrait/portrait-04.jpg': {
     title: 'Under the Turning Maple',
@@ -206,7 +206,7 @@ const overrides = {
   'travel/travel-15.jpg': {
     title: 'Wandering: Specific And Subtle Joys',
     description:
-      'A person holds open an illustrated magazine with a bilingual article about wandering. Warm, shallow focus softens the photographs and surrounding text while leaving the article title relatively clear. Fingers resting along the lower pages give the quiet editorial scene a tactile, unhurried quality.',
+      'A person holds open an illustrated magazine from a flight, with a bilingual article about wandering. Warm, shallow focus softens the photographs and surrounding text while leaving the article title relatively clear. Fingers resting along the lower pages give the quiet editorial scene a tactile, unhurried quality.',
   },
   'travel/travel-16.jpg': {
     title: 'Holding the Last Light',
