@@ -9,7 +9,7 @@ const overrides = {
   'portrait/portrait-01.jpg': {
     title: 'Wrist in Blue',
     description:
-      'Blue sleeve, and a wrist dressed in small keepsakes — amber, silver, turquoise — each one a story I will never be told. The garden behind melts into a green murmur. Some portraits don’t need a face.',
+      'Blue sleeve, and a wrist dressed in small keepsakes — a cinnabar charm blessed in prayer, silver, turquoise — each one a story I will never be told. The garden behind melts into a green murmur. Some portraits don’t need a face.',
   },
   'portrait/portrait-02.jpg': {
     title: 'Woman by the Pillar',
