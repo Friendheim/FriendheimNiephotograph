@@ -100,18 +100,20 @@ app.whenReady().then(async () => {
 
     // ---------- Portfolio ----------
     await win.loadURL(BASE + '#/work')
-    await wait(4000) // let Vite finish first-pass module compilation
+    await wait(8000) // let Vite finish first-pass module compilation
     // scroll through the grid so lazy-loaded images count reliably (retry loop)
     let loadedImgs = 0
     for (let attempt = 0; attempt < 3 && loadedImgs < EXPECTED_TOTAL; attempt++) {
       await win.webContents.executeJavaScript(`(async () => {
-        for (let y = 0; y <= document.body.scrollHeight; y += 600) {
-          window.scrollTo(0, y)
-          await new Promise(r => setTimeout(r, 120))
+        for (let pass = 0; pass < 2; pass++) {
+          for (let y = 0; y <= document.body.scrollHeight; y += 400) {
+            window.scrollTo(0, y)
+            await new Promise(r => setTimeout(r, 180))
+          }
         }
         window.scrollTo(0, 0)
       })()`)
-      await wait(1500)
+      await wait(2500)
       loadedImgs = await win.webContents.executeJavaScript(
         `[...document.querySelectorAll('.masonry img')].filter(i => i.complete && i.naturalWidth > 0).length`
       )
@@ -148,6 +150,20 @@ app.whenReady().then(async () => {
     check('lightbox shows title', lb.title === 'Wrist in Blue', lb.title)
     check('lightbox shows description, hides empty facts', lb.desc && !lb.facts)
     await shot(win, 'lightbox.png')
+
+    // ---------- Prev / next navigation ----------
+    await win.webContents.executeJavaScript(`document.querySelector('.lightbox-nav.next').click()`)
+    await wait(400)
+    const nxt = await win.webContents.executeJavaScript(`document.querySelector('.lightbox-meta h2').textContent.trim()`)
+    check('lightbox next → second work', nxt === 'Woman by the Pillar', nxt)
+    await win.webContents.executeJavaScript(
+      `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft', bubbles: true }))`
+    )
+    await wait(400)
+    const prv = await win.webContents.executeJavaScript(`document.querySelector('.lightbox-meta h2').textContent.trim()`)
+    check('lightbox ArrowLeft → back', prv === 'Wrist in Blue', prv)
+    const cnt = await win.webContents.executeJavaScript(`document.querySelector('.lightbox-count').textContent.trim()`)
+    check('lightbox counter within filtered set', cnt === '1 / ' + EXPECTED_PORTRAIT, cnt)
 
     await win.webContents.executeJavaScript(
       `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))`
@@ -212,6 +228,28 @@ app.whenReady().then(async () => {
       note: !!document.querySelector('.series-note'),
     }))()`)
     check('Before Trilogy shows 6 cards + series note', before.cards === 6 && before.note, before.cards)
+
+    // ---------- Work deep link ----------
+    await win.loadURL(BASE + '#/work/travel%2Ftravel-12')
+    await wait(1200)
+    const deep = await win.webContents.executeJavaScript(`(() => {
+      const h2 = document.querySelector('.lightbox-meta h2')
+      return { open: !!document.querySelector('.lightbox'), title: h2 && h2.textContent.trim() }
+    })()`)
+    check('deep link opens specific work', deep.open && deep.title === 'Arrival at the End of the World', deep.title)
+    await win.webContents.executeJavaScript(
+      `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))`
+    )
+    await wait(300)
+
+    // ---------- Series page ----------
+    await win.loadURL(BASE + '#/series/odyssey')
+    await wait(1200)
+    const sp = await win.webContents.executeJavaScript(`(() => ({
+      h1: document.querySelector('h1').textContent.trim(),
+      cards: document.querySelectorAll('.masonry .work-card').length,
+    }))()`)
+    check('series page shows Odyssey + 3 works', sp.h1 === 'Odyssey' && sp.cards === 3, `${sp.h1} / ${sp.cards}`)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

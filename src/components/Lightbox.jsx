@@ -1,22 +1,47 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { CloseIcon } from './icons.jsx'
+import { CloseIcon, ArrowLeftIcon, ArrowRightIcon, LinkIcon } from './icons.jsx'
 
 /**
  * Immersive work-detail modal.
  * Closes on: backdrop click, close button, or Escape.
- * Keyboard: focus is trapped inside while open, then returned to
- * the triggering element on close. Body scroll is locked.
+ * Browsing: ← / → keys or the arrow buttons step through `items`.
+ * Copy link copies the current page URL (per-work deep link).
+ * Keyboard: focus is trapped inside while open, then returned to the
+ * triggering element on close. Body scroll is locked.
  */
-export default function Lightbox({ work, onClose }) {
+export default function Lightbox({ work, items = [], onClose, onNavigate }) {
   const panelRef = useRef(null)
   const closeRef = useRef(null)
+  const [copied, setCopied] = useState(false)
+
+  const idx = items.findIndex((w) => w.id === work.id)
+  const prev = idx > 0 ? items[idx - 1] : null
+  const next = idx >= 0 && idx < items.length - 1 ? items[idx + 1] : null
+
+  const goPrev = useCallback(() => {
+    if (prev) onNavigate(prev)
+  }, [prev, onNavigate])
+
+  const goNext = useCallback(() => {
+    if (next) onNavigate(next)
+  }, [next, onNavigate])
 
   const handleKey = useCallback(
     (e) => {
       if (e.key === 'Escape') {
         e.preventDefault()
         onClose()
+        return
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        goPrev()
+        return
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        goNext()
         return
       }
       if (e.key === 'Tab') {
@@ -37,7 +62,7 @@ export default function Lightbox({ work, onClose }) {
         }
       }
     },
-    [onClose]
+    [onClose, goPrev, goNext]
   )
 
   useEffect(() => {
@@ -54,6 +79,16 @@ export default function Lightbox({ work, onClose }) {
       }
     }
   }, [handleKey])
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1800)
+    } catch (e) {
+      /* clipboard unavailable */
+    }
+  }
 
   return createPortal(
     <div
@@ -76,11 +111,38 @@ export default function Lightbox({ work, onClose }) {
         >
           <CloseIcon />
         </button>
+        {prev && (
+          <button
+            type="button"
+            className="lightbox-nav prev"
+            onClick={goPrev}
+            aria-label="Previous work"
+          >
+            <ArrowLeftIcon />
+          </button>
+        )}
+        {next && (
+          <button
+            type="button"
+            className="lightbox-nav next"
+            onClick={goNext}
+            aria-label="Next work"
+          >
+            <ArrowRightIcon />
+          </button>
+        )}
         <div className="lightbox-media">
           <img src={work.image} alt={work.alt} />
         </div>
         <div className="lightbox-meta">
-          <span className="lightbox-cat">{work.category}</span>
+          <div className="lightbox-meta-top">
+            <span className="lightbox-cat">{work.category}</span>
+            {items.length > 1 && (
+              <span className="lightbox-count">
+                {idx + 1} / {items.length}
+              </span>
+            )}
+          </div>
           <h2>{work.title}</h2>
           {(work.location || work.date) && (
             <div className="lightbox-facts">
@@ -89,7 +151,16 @@ export default function Lightbox({ work, onClose }) {
             </div>
           )}
           {work.description && <p className="lightbox-desc">{work.description}</p>}
-          <p className="lightbox-note">Press Esc or click outside to close.</p>
+          <div className="lightbox-actions">
+            <button
+              type="button"
+              className={`copy-btn${copied ? ' copied' : ''}`}
+              onClick={copyLink}
+            >
+              <LinkIcon /> {copied ? 'Link copied' : 'Copy link'}
+            </button>
+            <span className="lightbox-note">← → to browse · Esc to close</span>
+          </div>
         </div>
       </div>
     </div>,

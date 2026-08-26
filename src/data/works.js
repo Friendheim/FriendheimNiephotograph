@@ -380,4 +380,11 @@ const seriesNotes = {
     'Places that exist twice — once as light, once as recollection. The coast, the square, the house: memory redraws them until they become less locations than feelings that keep their shape.',
 }
 
-export { works, categories, seriesNotes }
+// Series metadata for dedicated series pages (key, label, note)
+const seriesMeta = KNOWN_ORDER.filter((k) => CATEGORY_LABELS[k]).map((k) => ({
+  key: k,
+  label: CATEGORY_LABELS[k],
+  note: seriesNotes[CATEGORY_LABELS[k]] || '',
+}))
+
+export { works, categories, seriesNotes, seriesMeta }

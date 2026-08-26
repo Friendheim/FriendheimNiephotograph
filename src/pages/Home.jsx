@@ -96,7 +96,14 @@ export default function Home() {
         </div>
       </section>
 
-      {selected && <Lightbox work={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <Lightbox
+          work={selected}
+          items={works}
+          onClose={() => setSelected(null)}
+          onNavigate={(w) => setSelected(w)}
+        />
+      )}
     </>
   )
 }
