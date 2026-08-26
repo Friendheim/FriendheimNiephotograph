@@ -354,8 +354,8 @@ function humanizeTitle(filename) {
 // or strongly implied places (used by the Map page). More will join as the
 // collection grows — edit freely.
 const placePins = {
-  'street/street-01.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0389, 102.7183] },
-  'street/street-02.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0389, 102.7183] },
+  'street/street-01.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0459, 102.7007] },
+  'street/street-02.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0267, 102.7153] },
   'street/street-03.jpg': { location: 'Shanghai, China', coords: [31.2304, 121.4737] },
   'street/street-04.jpg': { location: 'Dresden, Germany', coords: [51.046, 13.739] },
   'street/street-05.jpg': { location: 'Dresden, Germany', coords: [51.051, 13.742] },
@@ -363,7 +363,7 @@ const placePins = {
   'street/street-07.jpg': { location: 'Dresden, Germany', coords: [51.049, 13.744] },
   'street/street-08.jpg': { location: 'Dresden, Germany', coords: [51.134, 13.767] },
   'street/street-09.jpg': { location: 'Macau, China', coords: [22.1987, 113.5439] },
-  'street/street-13.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0389, 102.7183] },
+  'street/street-13.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0091, 102.7192] },
   'travel/landscape-01.jpg': { location: 'Dali, Yunnan, China', coords: [25.606, 100.267] },
   'travel/landscape-02.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
   'travel/landscape-03.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
