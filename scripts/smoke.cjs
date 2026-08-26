@@ -122,7 +122,7 @@ app.whenReady().then(async () => {
     }))()`)
     check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
     check('all work images loaded', loadedImgs === EXPECTED_TOTAL, `${loadedImgs}/${EXPECTED_TOTAL}`)
-    check('9 filter buttons', work.filters === 9, work.filters)
+    check('10 filter buttons', work.filters === 10, work.filters)
     await shot(win, 'work-light.png')
 
     // ---------- Category filter ----------
@@ -201,6 +201,18 @@ app.whenReady().then(async () => {
     }))()`)
     check('Outside the Frame shows 4 cards', frame.cards === 4, frame.cards)
     check('Outside the Frame first title is Spire Through Three Realities', frame.first === 'Spire Through Three Realities', frame.first)
+
+    // ---------- Before Trilogy (empty until photos are uploaded) ----------
+    await win.webContents.executeJavaScript(
+      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'The Before Trilogy').click()`
+    )
+    await wait(600)
+    const before = await win.webContents.executeJavaScript(`(() => ({
+      empty: !!document.querySelector('.empty-hint'),
+      cards: document.querySelectorAll('.masonry .work-card').length,
+      note: !!document.querySelector('.series-note'),
+    }))()`)
+    check('Before Trilogy shows empty hint + series note', before.empty && before.cards === 0 && before.note)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

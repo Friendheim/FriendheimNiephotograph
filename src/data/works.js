@@ -222,6 +222,23 @@ const overrides = {
     description:
       'A strange room, a lit lamp, an open book. The quietest moments of travel are rarely the destinations — they are the times nobody watches, when you keep company with yourself. Truman looked for the exit to find what was real. Sometimes we need no escape, only the feeling of truly existing inside our own lives.',
   },
+
+  // --- The Before Trilogy — three times of day, one question ---
+  'before/before-01.jpg': {
+    title: 'The Morning We Met',
+    description:
+      'Dawn, and everything still possible — the hour when two people agree to walk the same direction for a while. Whatever happens after belongs to the day; this frame keeps only the beginning.',
+  },
+  'before/before-02.jpg': {
+    title: 'The Long Evening',
+    description:
+      'Sunset, and the conversation that refuses to end. The light changes, the streets fill and empty, and two people keep walking because stopping would mean deciding. Some evenings are really questions wearing daylight.',
+  },
+  'before/before-03.jpg': {
+    title: 'Before Midnight',
+    description:
+      'Midnight, and the honesty that arrives with it. The day’s performances are over; what remains is the quieter work — remembering why the walk began, and choosing it again in the dark.',
+  },
 }
 
 // --- Auto-detect every photo in the category folders ---
@@ -303,6 +320,8 @@ const categories = ['All', ...KNOWN_ORDER.map((k) => labelFor(k)), ...extraFolde
 const seriesNotes = {
   'Outside the Frame':
     'The Truman series looks at the distance between the real and the invented in travel — the photographs no longer simply prove "I was here"; they ask: as we keep recording the world, are we seeing what is real, or what we believe to be real?',
+  'The Before Trilogy':
+    'Three times of day, one question — sunrise, sunset, midnight. The Before Trilogy asks what love looks like between the morning we meet and the hour we finally tell the truth.',
 }
 
 export { works, categories, seriesNotes }
