@@ -357,7 +357,7 @@ const placePins = {
   'landscape/landscape-03.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
   'landscape/landscape-04.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.76, 0.202] },
   'memory/memory-01.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.762, 0.205] },
-  'memory/memory-03.jpg': { location: 'Shanghai, China', coords: [31.2304, 121.4737] },
+  'memory/memory-03.jpg': { location: 'Riga, Latvia', coords: [56.9496, 24.1052] },
   'odyssey/odyssey-03.jpg': { location: 'Nanchang, Jiangxi, China', coords: [28.682, 115.858] },
   'travel/travel-04.jpg': { location: 'Macau, China', coords: [22.1987, 113.5439] },
   'travel/travel-08.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
