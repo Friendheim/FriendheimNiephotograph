@@ -52,7 +52,7 @@ export default function Navbar() {
             aria-label={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
             title={lang === 'zh' ? t('switchToEn') : t('switchToZh')}
           >
-            {lang === 'zh' ? 'EN' : 'CH'}
+            {lang === 'zh' ? 'CH' : 'EN'}
           </button>
           <ThemeToggle />
         </div>
