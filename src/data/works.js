@@ -120,6 +120,21 @@ const overrides = {
     description:
       'The sign is viewed from below against a clear blue sky, with green foliage filling the opposite edge of the frame. Sunlit walls, deep blue tiles, and the simple white lettering give the street detail a crisp, graphic quality.',
   },
+  'street/street-11.jpg': {
+    title: 'Lunch Across the Table',
+    description:
+      'The oversized gray bowl dominates the foreground, its warm broth dotted with herbs and pale pieces of food. Cups, cutlery, and the diner opposite create the informal closeness of a shared meal.',
+  },
+  'street/street-12.jpg': {
+    title: 'After the Last Sip',
+    description:
+      'Warm light gathers around the white cup while the rest of the setting recedes into shadow. Small reflections and the spoon left inside the cup preserve the quiet trace of a finished drink.',
+  },
+  'street/street-13.jpg': {
+    title: 'Object in Hard Light',
+    description:
+      'Direct sunlight cuts across the pale upholstery, producing a compact, sharply defined shadow beneath the glasses. Cool blue fabric and the dark edge of the seat divide the frame into bold areas of color and light.',
+  },
   'travel/travel-01.jpg': {
     title: 'Objects in Warm Light',
     description:
@@ -251,6 +266,16 @@ const overrides = {
     title: 'Before Midnight',
     description:
       'Blue hour, and my grandparents standing side by side with their backs to the camera, watching the wooded view. The day’s performances are over; what remains is the quieter work — remembering why the walk began, and choosing it again in the dark.',
+  },
+  'before/before-04.jpg': {
+    title: 'Leaving the Dark Interior',
+    description:
+      'Night, and two people leaving a lit interior together, the signs glowing behind them. Whatever was said inside stays inside; what matters now is the walk out — the first steps of the next part of the evening.',
+  },
+  'before/before-05.jpg': {
+    title: 'Between Passing Figures',
+    description:
+      'Daylight, and a couple holding their own small clearing among the trees while the world passes blurred in front of them. Dressed like it matters, standing close like it matters — some afternoons the whole story fits in one held pose.',
   },
 }
 
