@@ -162,20 +162,10 @@ const overrides = {
   },
 
   // --- Creative (创作) — experimental posters & collages ---
-  'creative/creative-01.jpg': {
-    title: 'Spire Through Three Realities',
-    description:
-      'The same civic scene is stacked into three registers, shifting from observed architecture to dissolved pigment and line. Repetition turns the spire into a visual axis while the square below flickers between document and recollection.',
-  },
   'creative/creative-02.jpg': {
     title: 'Architecture, Recut and Reframed',
     description:
       'This is an edit about translation: one place is tested as photograph, pale wash, diagram, and photograph again. Thin construction lines and generous cream margins make the ordinary square read like a set of competing plans.',
-  },
-  'creative/creative-04.jpg': {
-    title: 'Blue Tree, Red Orbit',
-    description:
-      'The tree is treated as a hinge between atmosphere, reflection, and memory. A pair of red discs interrupts the monochrome field, giving the repeated figure-and-branch motif a measured pulse.',
   },
 
   // --- Memory (记忆) — a series in two parts ---
@@ -211,15 +201,26 @@ const overrides = {
     description:
       'Still water keeps its careful distance from the far city, the way Odysseus paused to regard an unknown island. There is no destination here — only waiting, watching, and the imagining of what lies beyond.',
   },
-  'creative/creative-11.jpg': {
-    title: 'Ferry Against the Mountain',
+  // --- Outside the Frame — four notes on being watched ---
+  'frame/frame-01.jpg': {
+    title: 'A Pause in the City',
     description:
-      'I built the image around a single departure point: the ferry’s blunt white hull set against serrated peaks. The painted echoes soften the photographic interval, while the marginal handwriting turns the harbor into a page of travel notes.',
+      'The square keeps exactly what it was. Old buildings, a spire, streets, cars and cafés make up an ordinary afternoon — nothing special happens, and people pass at their own pace. But when the lens stays, a plain afternoon is kept. Like certain moments in Truman’s life, what matters is not the stage, but that someone truly existed on it.',
   },
-  'creative/creative-12.jpg': {
-    title: 'Reader Across Three Rooms',
+  'frame/frame-02.jpg': {
+    title: 'Is the Distance Real?',
     description:
-      'Three bodies share one room but occupy different tempos of attention. The open book anchors the center, while lamps, wallpaper, and the tiny pavilion at the bottom edge extend the interior into a constructed world of study and withdrawal.',
+      'A boat rests on the water; beyond it, snow mountains in the light of the setting sun. The scene is vast and quiet, and the person inside it is small. Facing such a view we believe we are close to something real — but the photograph reminds us that everything here was chosen: the place to stand, the hour, the way to keep the moment. Reality is not discovered; it is formed, again and again, in the act of watching.',
+  },
+  'frame/frame-03.jpg': {
+    title: 'The Person Outside the Frame',
+    description:
+      'A person stands before a wall of flowers while background images overlap with reality — a real body, a designed scene, and the instant the photograph kept, all present at once. It is the moment Truman first understands he lives in a world being watched. But in a way we all live inside our own frame — recording, remembering, and reshaping our stories.',
+  },
+  'frame/frame-04.jpg': {
+    title: 'Reality Inside the Room',
+    description:
+      'A strange room, a lit lamp, an open book. The quietest moments of travel are rarely the destinations — they are the times nobody watches, when you keep company with yourself. Truman looked for the exit to find what was real. Sometimes we need no escape, only the feeling of truly existing inside our own lives.',
   },
 }
 
@@ -239,8 +240,9 @@ const CATEGORY_LABELS = {
   creative: 'Creative',
   odyssey: 'Odyssey',
   memory: 'Memory',
+  frame: 'Outside the Frame',
 }
-const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey', 'memory']
+const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey', 'memory', 'frame']
 
 function labelFor(folder) {
   return CATEGORY_LABELS[folder] || folder.charAt(0).toUpperCase() + folder.slice(1)

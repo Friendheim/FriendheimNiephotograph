@@ -117,7 +117,7 @@ app.whenReady().then(async () => {
     }))()`)
     check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
     check('all work images loaded', work.imgs === EXPECTED_TOTAL, `${work.imgs}/${EXPECTED_TOTAL}`)
-    check('8 filter buttons', work.filters === 8, work.filters)
+    check('9 filter buttons', work.filters === 9, work.filters)
     await shot(win, 'work-light.png')
 
     // ---------- Category filter ----------
@@ -184,6 +184,18 @@ app.whenReady().then(async () => {
     }))()`)
     check('Memory filter shows 2 cards', memory.cards === 2, memory.cards)
     check('Memory first title is Memory of the Coast', memory.first === 'Memory of the Coast', memory.first)
+
+    // ---------- Outside the Frame filter ----------
+    await win.webContents.executeJavaScript(
+      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Outside the Frame').click()`
+    )
+    await wait(700)
+    const frame = await win.webContents.executeJavaScript(`(() => ({
+      cards: document.querySelectorAll('.masonry .work-card').length,
+      first: (document.querySelector('.masonry .work-title') || {}).textContent || '',
+    }))()`)
+    check('Outside the Frame shows 4 cards', frame.cards === 4, frame.cards)
+    check('Outside the Frame first title is A Pause in the City', frame.first === 'A Pause in the City', frame.first)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')
