@@ -434,24 +434,24 @@ const filters = [
   ...extraFolders.map((f) => ({ key: f, en: labelFor(f), zh: CATEGORY_LABELS_ZH[f] || labelFor(f) })),
 ]
 
-// Series statements, keyed by folder, bilingual { en, zh }
+// Series statements, keyed by folder, bilingual { en, zh } — prose-like, told slowly
 const notesEn = {
   portrait:
-    'People I meet along the way — those who paused, those who let me take their picture, and once, a friend who turned the camera on me. The series is never finished: there is always a new face waiting at the next corner.',
+    'Some of them I spoke with for an hour, some for the length of a red light. They paused, I raised the camera, and something small and true passed between us — a face, before it remembered it was being photographed. There will be more of them. The series is never finished, and I am glad of that: it means the walking goes on.',
   landscape:
-    'Landscapes that asked me to stand still — a ferry crossing grey water, cliffs at dusk, a frozen road in low sun. The light came, and the place held still long enough for both of us.',
+    'I have learned that landscapes do not wait for anyone, yet they will hold still for someone patient. The ferry crossed grey water and I held my breath; the cliffs kept their dusk until I was ready; the frozen road kept its long shadows in the low sun. The light came, and the place stayed — long enough for both of us.',
   street:
-    'The ordinary days of a student’s life — meals, lectures, crossings, weather. Not photographs of a life: the life itself, mid-sentence.',
+    'This is what a student’s life looks like when nobody is performing it: a set meal, a red light, the back row of a lecture hall, rain on the way to class. I did not arrange these days; I only kept them. They are not photographs of a life — they are the life itself, caught mid-sentence.',
   travel:
-    'Between semesters, a small bag and a film camera — shops, hotel rooms, train windows, one chairlift toward the snow. Places I was lucky enough to pass through.',
+    'Between semesters I pack a small bag and a film camera, and I go. The shops, the hotel rooms, the train windows, the chairlift climbing toward snow — I pass through them the way you pass through a conversation you do not want to end. I was lucky to be allowed in, however briefly.',
   odyssey:
-    'A series after Homer — a street crowd as a strait to cross, a city as a labyrinth, a horizon as an island never reached. Every journey retold as myth; every myth found again in an ordinary day.',
+    'After Homer: the street crowd is a strait to cross, the city a labyrinth, the horizon an island we will never reach. I retell ordinary journeys as myths, and find the myths waiting again in ordinary days — which is, I think, what myths are for.',
   memory:
-    'Places that exist twice — once as light, once as recollection. The coast, the square, the house: memory redraws them until they become less locations than feelings that keep their shape.',
+    'Some places exist twice — once as the light falling on them, once as the shape they leave in us. The coast, the square, the house: memory redraws them over and over, and each time they become a little less a place and a little more a feeling that keeps its shape.',
   frame:
-    'The Truman series looks at the distance between the real and the invented in travel — the photographs no longer simply prove "I was here"; they ask: as we keep recording the world, are we seeing what is real, or what we believe to be real?',
+    'This series is about the distance between the real and the invented. A photograph used to be proof that I was here; now I ask whether what I saw was what was there, or what I believed to be there. We record the world, and in recording it we make it — and we are made by it in return.',
   before:
-    'Three times of day, one question — sunrise, sunset, midnight. The Before Trilogy asks what love looks like between the morning we meet and the hour we finally tell the truth.',
+    'Three times of day, one question. In the morning we meet and everything is still possible; by sunset the conversation has grown long and warm; at midnight we finally tell the truth. Between sunrise and the hour of honesty, love has all its shapes — I am only trying to hold a few of them still.',
 }
 
 const seriesNotes = {}
