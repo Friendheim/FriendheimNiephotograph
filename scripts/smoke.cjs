@@ -51,6 +51,14 @@ app.whenReady().then(async () => {
   })
 
   try {
+    // Reset persisted preferences so the run always starts in English + light
+    await win.loadURL(BASE)
+    await win.webContents.executeJavaScript(
+      `localStorage.setItem('fhn-lang', 'en'); localStorage.setItem('fhn-theme', 'light')`
+    )
+    await win.webContents.reload()
+    await wait(1200)
+
     // ---------- Home ----------
     await win.loadURL(BASE)
     await wait(2200)
