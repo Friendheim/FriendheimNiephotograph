@@ -227,17 +227,17 @@ const overrides = {
   'before/before-01.jpg': {
     title: 'The Morning We Met',
     description:
-      'Dawn, and everything still possible — the hour when two people agree to walk the same direction for a while. Whatever happens after belongs to the day; this frame keeps only the beginning.',
+      'Early morning on a quiet sidewalk, and two people walking the same direction — one carrying a light backpack, both seen from behind or in profile. The low pale light belongs to the beginning of the day: nothing decided yet, everything still possible.',
   },
   'before/before-02.jpg': {
     title: 'The Long Evening',
     description:
-      'Dusk on a balcony, an elderly couple watching the trees from behind — the conversation long finished, the silence still comfortable. A golden moon rises through the dark; the evening has become a question they no longer need to answer.',
+      'Dusk on a residential street, two people standing close together near a large tree. Over the scene, a pale wall, window-like shapes and soft leaf shadows are laid like a collage — the evening holding its moment the way memory holds it: loosely, deliberately, almost ready to end.',
   },
   'before/before-03.jpg': {
     title: 'Before Midnight',
     description:
-      'Midnight, and the honesty that arrives with it. The day’s performances are over; what remains is the quieter work — remembering why the walk began, and choosing it again in the dark.',
+      'Blue hour, a man and a woman standing side by side with their backs to the camera, watching the wooded view. The day’s performances are over; what remains is the quieter work — remembering why the walk began, and choosing it again in the dark.',
   },
 }
 
