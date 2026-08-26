@@ -48,7 +48,7 @@ const CHAPTERS = [
     title: 'What Remains',
     prose:
       'The work keeps pointing back to the same questions: what is remembered, what is watched, what is true. My grandparents standing in the blue hour; at midnight, honest words held gently by the night; and in the dusk of Ushuaia, a boat resting before the snow mountains — whether the distance is real is never discovered, only formed, again and again, in the act of watching. The dream of Magnum is still there. And the walk is not finished — there is always a new face waiting at the next corner.',
-    works: ['memory/memory-01', 'before/before-03', 'frame/frame-02.jpg'],
+    works: ['memory/memory-01', 'before/before-03', 'frame/frame-02'],
   },
 ]
 
