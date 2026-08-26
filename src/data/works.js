@@ -439,7 +439,7 @@ const notesEn = {
   portrait:
     'Some of them I spoke with for an hour, some for the length of a red light. They paused, I raised the camera, and something small and true passed between us — a face, before it remembered it was being photographed. There will be more of them. The series is never finished, and I am glad of that: it means the walking goes on.',
   landscape:
-    'I have learned that landscapes do not wait for anyone, yet they will hold still for someone patient. The ferry crossed grey water and I held my breath; the cliffs kept their dusk until I was ready; the frozen road kept its long shadows in the low sun. The light came, and the place stayed — long enough for both of us.',
+    'I have learned that landscapes do not wait for anyone, yet they will hold still for someone patient. The ferry crossed grey water and I held my breath for the light; the cliffs kept their dusk until I raised the camera; the frozen road kept its long shadows in the low sun. When the light fell just right, I pressed the shutter — the rest, I left to the photograph.',
   street:
     'This is what a student’s life looks like when nobody is performing it: a set meal, a red light, the back row of a lecture hall, rain on the way to class. I did not arrange these days; I only kept them. They are not photographs of a life — they are the life itself, caught mid-sentence.',
   travel:
