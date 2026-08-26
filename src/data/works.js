@@ -336,6 +336,12 @@ const seriesNotes = {
     'Three times of day, one question — sunrise, sunset, midnight. The Before Trilogy asks what love looks like between the morning we meet and the hour we finally tell the truth.',
   'Days Like These':
     'The ordinary days of a student’s life — meals, lectures, crossings, weather. Not photographs of a life: the life itself, mid-sentence.',
+  'The Ones I Met':
+    'The people I met along the way — a woman by a pillar, a young man with a vintage camera, a couple under a turning maple. Portraits that happened because someone paused, not because I asked.',
+  'Places That Held Still':
+    'Landscapes that asked me to stand still — a ferry crossing grey water, cliffs at dusk, a frozen road in low sun. The light came, and the place held still long enough for both of us.',
+  'Passing Through':
+    'Between semesters, a small bag and a film camera — shops, hotel rooms, train windows, one chairlift toward the snow. Places I was lucky enough to pass through.',
 }
 
 export { works, categories, seriesNotes }
