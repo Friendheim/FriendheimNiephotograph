@@ -213,9 +213,9 @@ const overrides = {
       'A boat rests on the water; beyond it, snow mountains in the light of the setting sun. The scene is vast and quiet, and the person inside it is small. Facing such a view we believe we are close to something real — but the photograph reminds us that everything here was chosen: the place to stand, the hour, the way to keep the moment. Reality is not discovered; it is formed, again and again, in the act of watching.',
   },
   'frame/frame-03.jpg': {
-    title: 'The Person Outside the Frame',
+    title: 'The Tree Knows I Was Here',
     description:
-      'A person stands before a wall of flowers while background images overlap with reality — a real body, a designed scene, and the instant the photograph kept, all present at once. It is the moment Truman first understands he lives in a world being watched. But in a way we all live inside our own frame — recording, remembering, and reshaping our stories.',
+      'Mist over the coast; a lone tree and a person pausing for a moment make up an ordinary scene being watched. I record the instant the way one records a stage that was arranged in advance — sky, sea, branches, and the figure all placed inside a transparent set. Yet in this seemingly calm world, the single contrasting point of color becomes a small deviation — a tiny crack in reality, reminding us that even a life under countless gazes still owns its own moments.',
   },
   'frame/frame-04.jpg': {
     title: 'Reality Inside the Room',
@@ -298,4 +298,10 @@ const extraFolders = works
   .sort()
 const categories = ['All', ...KNOWN_ORDER.map((k) => labelFor(k)), ...extraFolders.map((f) => labelFor(f))]
 
-export { works, categories }
+// Optional series statement, shown when the theme is active (keyed by label)
+const seriesNotes = {
+  'Outside the Frame':
+    'The Truman series looks at the distance between the real and the invented in travel — the photographs no longer simply prove "I was here"; they ask: as we keep recording the world, are we seeing what is real, or what we believe to be real?',
+}
+
+export { works, categories, seriesNotes }

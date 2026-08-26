@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import Reveal from '../components/Reveal.jsx'
 import Lightbox from '../components/Lightbox.jsx'
-import { categories, works } from '../data/works.js'
+import { categories, works, seriesNotes } from '../data/works.js'
 
 export default function Portfolio() {
   const [active, setActive] = useState('All')
@@ -38,6 +38,7 @@ export default function Portfolio() {
                 </button>
               ))}
             </div>
+            {seriesNotes[active] && <p className="series-note">{seriesNotes[active]}</p>}
           </Reveal>
         </div>
       </section>
