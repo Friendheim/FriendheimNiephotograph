@@ -4,10 +4,11 @@
 //  HOW IT WORKS
 //  1. Every photo you drop into one of these folders appears on
 //     the site automatically (no code changes needed):
-//       src/assets/works/portrait/   → category "Portrait"
-//       src/assets/works/landscape/  → category "Landscape"
-//       src/assets/works/street/     → category "Street"
-//       src/assets/works/travel/     → category "Travel"
+//       src/assets/works/portrait/   → category "Faces"
+//       src/assets/works/landscape/  → category "Landscapes"
+//       src/assets/works/street/     → category "Streets"
+//       src/assets/works/travel/     → category "Journeys"
+//       src/assets/works/creative/   → category "Creative" (new)
 //     (you may add your own folders too — the folder name becomes
 //      a new category, e.g. src/assets/works/wildlife/)
 //  2. Title comes from the file name by default. For a custom title,
@@ -168,7 +169,19 @@ const modules = import.meta.glob('../assets/works/*/*.{jpg,jpeg,png,webp}', {
   import: 'default',
 })
 
-const KNOWN_ORDER = ['Portrait', 'Landscape', 'Street', 'Travel']
+// folder key → short editorial theme shown in the UI
+const CATEGORY_LABELS = {
+  portrait: 'Faces',
+  landscape: 'Landscapes',
+  street: 'Streets',
+  travel: 'Journeys',
+  creative: 'Creative',
+}
+const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative']
+
+function labelFor(folder) {
+  return CATEGORY_LABELS[folder] || folder.charAt(0).toUpperCase() + folder.slice(1)
+}
 
 function titleCase(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
@@ -189,10 +202,11 @@ const works = Object.entries(modules)
     if (!match) return null
     const folder = match[1]
     const filename = match[2]
-    const category = titleCase(folder)
+    const category = labelFor(folder)
     const override = overrides[`${folder}/${filename}`] || {}
     return {
       id: key,
+      folder,
       title: override.title || humanizeTitle(filename),
       category,
       location: override.location || '',
@@ -204,17 +218,19 @@ const works = Object.entries(modules)
   })
   .filter(Boolean)
   .sort((a, b) => {
-    const oa = KNOWN_ORDER.indexOf(a.category)
-    const ob = KNOWN_ORDER.indexOf(b.category)
+    const oa = KNOWN_ORDER.indexOf(a.folder)
+    const ob = KNOWN_ORDER.indexOf(b.folder)
     const ca = oa === -1 ? KNOWN_ORDER.length : oa
     const cb = ob === -1 ? KNOWN_ORDER.length : ob
     if (ca !== cb) return ca - cb
     return a.image.localeCompare(b.image, undefined, { numeric: true })
   })
 
-const categories = ['All', ...KNOWN_ORDER.filter((c) => works.some((w) => w.category === c)), ...works
-  .map((w) => w.category)
-  .filter((c, i, arr) => arr.indexOf(c) === i && !KNOWN_ORDER.includes(c))
-  .sort()]
+// 'All' + every known theme (including empty ones like Creative) + any extra folders
+const extraFolders = works
+  .map((w) => w.folder)
+  .filter((f, i, arr) => arr.indexOf(f) === i && !KNOWN_ORDER.includes(f))
+  .sort()
+const categories = ['All', ...KNOWN_ORDER.map((k) => labelFor(k)), ...extraFolders.map((f) => labelFor(f))]
 
 export { works, categories }

@@ -103,18 +103,18 @@ app.whenReady().then(async () => {
     }))()`)
     check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
     check('all work images loaded', work.imgs === EXPECTED_TOTAL, `${work.imgs}/${EXPECTED_TOTAL}`)
-    check('5 filter buttons', work.filters === 5, work.filters)
+    check('6 filter buttons', work.filters === 6, work.filters)
     await shot(win, 'work-light.png')
 
     // ---------- Category filter ----------
     await win.webContents.executeJavaScript(
-      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Portrait').click()`
+      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Faces').click()`
     )
     await wait(900)
     const filt = await win.webContents.executeJavaScript(
       `document.querySelectorAll('.masonry .work-card').length`
     )
-    check('Portrait filter matches portrait folder', filt === EXPECTED_PORTRAIT, `${filt} vs ${EXPECTED_PORTRAIT}`)
+    check('Faces filter matches portrait folder', filt === EXPECTED_PORTRAIT, `${filt} vs ${EXPECTED_PORTRAIT}`)
     await shot(win, 'work-portrait.png')
 
     // ---------- Lightbox ----------
@@ -136,6 +136,17 @@ app.whenReady().then(async () => {
     await wait(400)
     const closed = await win.webContents.executeJavaScript(`!document.querySelector('.lightbox')`)
     check('Esc closes lightbox', closed)
+
+    // ---------- Creative empty state ----------
+    await win.webContents.executeJavaScript(
+      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Creative').click()`
+    )
+    await wait(700)
+    const creative = await win.webContents.executeJavaScript(`(() => ({
+      empty: !!document.querySelector('.empty-hint'),
+      cards: document.querySelectorAll('.masonry .work-card').length,
+    }))()`)
+    check('Creative shows empty hint (no photos yet)', creative.empty && creative.cards === 0)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

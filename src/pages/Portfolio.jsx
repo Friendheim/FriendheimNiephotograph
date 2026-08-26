@@ -65,6 +65,12 @@ export default function Portfolio() {
               </Reveal>
             ))}
           </div>
+          {filtered.length === 0 && (
+            <p className="empty-hint">
+              Nothing here yet — drop photos into <code>src/assets/works/creative/</code> and they
+              will appear automatically.
+            </p>
+          )}
         </div>
       </section>
 

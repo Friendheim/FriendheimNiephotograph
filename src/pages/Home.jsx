@@ -38,9 +38,9 @@ export default function Home() {
         <div className="container">
           <Reveal>
             <div className="featured-head">
-              <h2>Selected work</h2>
+              <h2>Selected frames</h2>
               <Link className="text-link" to="/work">
-                All work →
+                All frames →
               </Link>
             </div>
           </Reveal>
