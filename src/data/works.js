@@ -368,6 +368,7 @@ const placePins = {
   'odyssey/odyssey-03.jpg': { location: 'Nanchang, Jiangxi, China', coords: [28.682, 115.858] },
   'travel/travel-04.jpg': { location: 'The Londoner Macao, Macau, China', coords: [22.147, 113.5605] },
   'travel/travel-08.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8005, -68.2892] },
+  'travel/travel-09.jpg': { location: 'Waldorf Astoria Xiamen, Fujian, China', coords: [24.4873, 118.1274] },
   'travel/travel-10.jpg': { location: 'Xiamen, Fujian, China', coords: [24.4798, 118.0894] },
   'travel/travel-12.jpg': { location: 'Ushuaia Airport (USH), Argentina', coords: [-54.8426, -68.2958] },
   'travel/travel-13.jpg': { location: 'Ushuaia, Argentina', coords: [-54.789, -68.321] },
