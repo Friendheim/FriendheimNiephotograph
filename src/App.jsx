@@ -7,7 +7,6 @@ import Home from './pages/Home.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import SeriesPage from './pages/SeriesPage.jsx'
 import MapPage from './pages/MapPage.jsx'
-import EssayPage from './pages/EssayPage.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 
@@ -37,8 +36,8 @@ export default function App() {
           <Route path="/work/:workKey" element={<Portfolio />} />
           <Route path="/series/:seriesKey" element={<SeriesPage />} />
           <Route path="/map" element={<MapPage />} />
-          <Route path="/essay" element={<EssayPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/essay" element={<Navigate to="/about" replace />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

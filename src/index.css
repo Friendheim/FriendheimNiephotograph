@@ -799,12 +799,18 @@ ul {
 }
 
 /* ---------- Essay (The Long Walk) ---------- */
+.essay-merged {
+  border-top: 1px solid var(--line);
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+}
+
 .essay-head {
   padding: clamp(3rem, 7vw, 5.5rem) 0 2rem;
 }
 
-.essay-head h1 {
-  font-size: clamp(2.6rem, 6vw, 4rem);
+.essay-head h1,
+.essay-head h2 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
 }
 
 .essay-intro {
@@ -826,8 +832,13 @@ ul {
   margin: 0 0 0.3rem;
 }
 
-.essay-chapter h2 {
-  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+.essay-chapter h2,
+.essay-chapter h3 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
 }
 
 .essay-prose {
@@ -1220,7 +1231,7 @@ ul {
     width: min(100% - 2rem, var(--container));
   }
 
-  /* Two-row mobile nav: brand on top, links spread below — never overflows */
+  /* Two-row mobile nav: brand on top, links below — wraps instead of overflowing */
   .nav-inner {
     height: auto;
     flex-wrap: wrap;
@@ -1230,12 +1241,20 @@ ul {
 
   .nav-links {
     width: 100%;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 0.1rem;
   }
 
   .nav-link {
-    padding: 0.5rem 0.6rem;
-    font-size: 0.92rem;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.9rem;
+  }
+
+  .lang-toggle,
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
   }
 
   .featured-grid {

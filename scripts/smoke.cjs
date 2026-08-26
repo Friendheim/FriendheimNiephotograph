@@ -104,7 +104,7 @@ app.whenReady().then(async () => {
     const zhNav = await win.webContents.executeJavaScript(
       `[...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join(',')`
     )
-    check('switches to Chinese', zhNav.includes('首页') && zhNav.includes('作品'), zhNav)
+    check('switches to Chinese', zhNav.includes('首页') && zhNav.includes('作品') && !zhNav.includes('随笔'), zhNav)
     const zhHero = await win.webContents.executeJavaScript(`(() => {
       const img = document.querySelector('.hero-figure img')
       return !!img && !!img.src && img.complete && img.naturalWidth > 0
@@ -276,15 +276,15 @@ app.whenReady().then(async () => {
     }))()`)
     check('map page renders with pins', map.wrap && map.pins >= 10 && /Where these frames/.test(map.h1), `${map.pins} pins`)
 
-    // ---------- Essay page ----------
-    await win.loadURL(BASE + '#/essay')
+    // ---------- Essay merged into About ----------
+    await win.loadURL(BASE + '#/about')
     await wait(1200)
     const essay = await win.webContents.executeJavaScript(`(() => ({
       h1: (document.querySelector('h1') || {}).textContent || '',
       chapters: document.querySelectorAll('.essay-chapter').length,
       figures: document.querySelectorAll('.essay-figure').length,
     }))()`)
-    check('essay page renders 6 chapters', essay.h1 === 'The Long Walk' && essay.chapters === 6 && essay.figures >= 10, `${essay.chapters} chapters / ${essay.figures} figures`)
+    check('essay merged into About', essay.h1 === 'About me' && essay.chapters === 6 && essay.figures >= 18, `${essay.chapters} chapters / ${essay.figures} figures`)
 
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')

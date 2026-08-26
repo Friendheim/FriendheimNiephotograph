@@ -19,7 +19,6 @@ export default function Navbar() {
     { to: '/', label: t('navHome'), end: true },
     { to: '/work', label: t('navWork') },
     { to: '/map', label: t('navMap') },
-    { to: '/essay', label: t('navEssay') },
     { to: '/about', label: t('navAbout') },
     { to: '/contact', label: t('navContact') },
   ]
