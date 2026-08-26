@@ -105,6 +105,21 @@ const overrides = {
     description:
       'Two glasses, two plates, and a conversation long enough to let the room go soft around it. Some evenings are the entire reason the other days exist.',
   },
+  'street/street-08.jpg': {
+    title: 'Stillness Before Departure',
+    description:
+      'Cool daylight enters through the terminal windows while linear ceiling lights illuminate the polished floor. Repeated chairs, beams, and suspended signs give the quiet interior a precise geometric rhythm.',
+  },
+  'street/street-09.jpg': {
+    title: 'Time Beyond the Iron',
+    description:
+      'The pale clock tower stands against an overcast sky, framed by heavy curved metalwork on the right. The contrast between ornate stonework and dark industrial geometry creates a restrained architectural composition.',
+  },
+  'street/street-10.jpg': {
+    title: 'A Sign Beneath Summer',
+    description:
+      'The sign is viewed from below against a clear blue sky, with green foliage filling the opposite edge of the frame. Sunlit walls, deep blue tiles, and the simple white lettering give the street detail a crisp, graphic quality.',
+  },
   'travel/travel-01.jpg': {
     title: 'Objects in Warm Light',
     description:
