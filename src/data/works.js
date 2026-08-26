@@ -36,6 +36,16 @@ const overrides = {
     description:
       'The figure is framed by tall grasses and leafy branches, facing calm water and a low tree-covered horizon. Saturated blue kayaks provide a vivid foreground accent against the warm evening landscape.',
   },
+  'portrait/portrait-07.jpg': {
+    title: 'Shade Beside the Water',
+    description:
+      'Four people sit together on a wooden bench facing a lake, two umbrellas open above them. Seen from behind in strong midday light, they look across the water toward trees and low buildings.',
+  },
+  'portrait/portrait-08.jpg': {
+    title: 'Work Beneath Open Sky',
+    description:
+      'A man holding a paintbrush stands on a raised structural beam beside an orange bucket. Seen from below, worker and dark framework are silhouetted against a pale, partly cloudy sky; strong diagonals give the ordinary task a spare, monumental presence.',
+  },
   'landscape/landscape-01.jpg': {
     title: 'The White Ferry',
     description:
@@ -192,6 +202,21 @@ const overrides = {
     title: 'Mountain Above the Town',
     description:
       'Rendered in stark monochrome, the mountain’s rock and snow textures dominate the upper frame. Deep foreground shadows and tiny buildings below create a dramatic contrast between immense terrain and human settlement.',
+  },
+  'travel/travel-15.jpg': {
+    title: 'Pages of Subtle Joy',
+    description:
+      'A person holds open an illustrated magazine with a bilingual article about wandering. Warm, shallow focus softens the photographs and surrounding text while leaving the article title relatively clear. Fingers resting along the lower pages give the quiet editorial scene a tactile, unhurried quality.',
+  },
+  'travel/travel-16.jpg': {
+    title: 'Holding the Last Light',
+    description:
+      'A person adjusts the controls of a silver camera whose screen shows a red sunset beneath dark clouds. The camera fills the frame while the ground falls softly out of focus; its illuminated screen preserves a small, vivid horizon within the muted outdoor scene.',
+  },
+  'travel/travel-17.jpg': {
+    title: 'Camera Between Stations',
+    description:
+      'A seated passenger holds a black Fujifilm X-Pro2 inside a vehicle. The camera rests above light denim, its engraved controls and compact lens clearly visible; patterned seats and a dark window reflection place the close-up within a subdued moment of travel.',
   },
 
   // --- Memory (记忆) — a series in four parts ---
