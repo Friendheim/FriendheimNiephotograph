@@ -263,10 +263,10 @@ const modules = import.meta.glob('../assets/works/*/*.{jpg,jpeg,png,webp}', {
 
 // folder key → short editorial theme shown in the UI
 const CATEGORY_LABELS = {
-  portrait: 'Faces',
-  landscape: 'Landscapes',
+  portrait: 'The Ones I Met',
+  landscape: 'Places That Held Still',
   street: 'Days Like These',
-  travel: 'Journeys',
+  travel: 'Passing Through',
   odyssey: 'Odyssey',
   memory: 'Memory',
   frame: 'Outside the Frame',

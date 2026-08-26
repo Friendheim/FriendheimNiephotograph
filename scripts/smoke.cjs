@@ -127,13 +127,13 @@ app.whenReady().then(async () => {
 
     // ---------- Category filter ----------
     await win.webContents.executeJavaScript(
-      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'Faces').click()`
+      `[...document.querySelectorAll('.filter-btn')].find(b => b.textContent.trim() === 'The Ones I Met').click()`
     )
     await wait(900)
     const filt = await win.webContents.executeJavaScript(
       `document.querySelectorAll('.masonry .work-card').length`
     )
-    check('Faces filter matches portrait folder', filt === EXPECTED_PORTRAIT, `${filt} vs ${EXPECTED_PORTRAIT}`)
+    check('The Ones I Met filter matches portrait folder', filt === EXPECTED_PORTRAIT, `${filt} vs ${EXPECTED_PORTRAIT}`)
     await shot(win, 'work-portrait.png')
 
     // ---------- Lightbox ----------
