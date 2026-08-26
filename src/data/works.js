@@ -204,7 +204,7 @@ const overrides = {
       'Rendered in stark monochrome, the mountain’s rock and snow textures dominate the upper frame. Deep foreground shadows and tiny buildings below create a dramatic contrast between immense terrain and human settlement.',
   },
   'travel/travel-15.jpg': {
-    title: 'Pages of Subtle Joy',
+    title: 'Wandering: Specific And Subtle Joys',
     description:
       'A person holds open an illustrated magazine with a bilingual article about wandering. Warm, shallow focus softens the photographs and surrounding text while leaving the article title relatively clear. Fingers resting along the lower pages give the quiet editorial scene a tactile, unhurried quality.',
   },
