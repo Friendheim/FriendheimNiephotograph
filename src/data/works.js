@@ -365,6 +365,7 @@ const placePins = {
   'travel/travel-12.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
   'travel/travel-13.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
   'travel/travel-14.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
+  'frame/frame-01.jpg': { location: 'Riga, Latvia', coords: [56.9496, 24.1052] },
   'frame/frame-02.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
   'before/before-06.jpg': { location: 'Dresden, Germany', coords: [51.043, 13.742] },
 }
