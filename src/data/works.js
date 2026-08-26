@@ -45,6 +45,11 @@ const overrides = {
     description:
       'The columns divided the afternoon into quiet sections, and he stood exactly where the light let him. A turquoise bus passed in a hurry; he did not.',
   },
+  'portrait/portrait-06.jpg': {
+    title: 'Blue Boats by the Lake',
+    description:
+      'The figure is framed by tall grasses and leafy branches, facing calm water and a low tree-covered horizon. Saturated blue kayaks provide a vivid foreground accent against the warm evening landscape.',
+  },
   'landscape/landscape-01.jpg': {
     title: 'The White Ferry',
     description:
@@ -191,6 +196,16 @@ const overrides = {
     date: 'July 15, 2026',
     description:
       'Finally — the end of the world. The plane fought through rough air, and when it landed the whole cabin applauded, like a scene from a film. The door opened onto golden light, and an iceberg rose to meet us. Ushuaia.',
+  },
+  'travel/travel-13.jpg': {
+    title: 'Light Across the Snow',
+    description:
+      'Soft sunlight moves across the ridges, revealing overlapping peaks, shadowed gullies, and drifting cloud. The wide composition emphasizes the quiet scale and changing light of the alpine landscape.',
+  },
+  'travel/travel-14.jpg': {
+    title: 'Mountain Above the Town',
+    description:
+      'Rendered in stark monochrome, the mountain’s rock and snow textures dominate the upper frame. Deep foreground shadows and tiny buildings below create a dramatic contrast between immense terrain and human settlement.',
   },
 
   // --- Memory (记忆) — a series in four parts ---
