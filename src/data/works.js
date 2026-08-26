@@ -327,19 +327,27 @@ function humanizeTitle(filename) {
 // or strongly implied places (used by the Map page). More will join as the
 // collection grows — edit freely.
 const placePins = {
-  'street/street-01.jpg': { location: 'Dresden, Germany', coords: [51.053, 13.737] },
+  'street/street-01.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0389, 102.7183] },
   'street/street-02.jpg': { location: 'Dresden, Germany', coords: [51.047, 13.741] },
-  'street/street-03.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.733] },
+  'street/street-03.jpg': { location: 'Shanghai, China', coords: [31.2304, 121.4737] },
   'street/street-04.jpg': { location: 'Dresden, Germany', coords: [51.046, 13.739] },
   'street/street-05.jpg': { location: 'Dresden, Germany', coords: [51.051, 13.742] },
   'street/street-06.jpg': { location: 'Dresden, Germany', coords: [51.044, 13.735] },
   'street/street-07.jpg': { location: 'Dresden, Germany', coords: [51.049, 13.744] },
+  'street/street-08.jpg': { location: 'Dresden, Germany', coords: [51.134, 13.767] },
   'street/street-09.jpg': { location: 'London, United Kingdom', coords: [51.5007, -0.1246] },
-  'landscape/landscape-01.jpg': { location: 'Dali, Yunnan, China', coords: [25.606, 100.267] },
+  'street/street-13.jpg': { location: 'Kunming, Yunnan, China', coords: [25.0389, 102.7183] },
+  'landscape/landscape-02.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
+  'landscape/landscape-03.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.737] },
   'landscape/landscape-04.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.76, 0.202] },
   'memory/memory-01.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.762, 0.205] },
-  'before/before-06.jpg': { location: 'Dresden, Germany', coords: [51.043, 13.742] },
+  'memory/memory-03.jpg': { location: 'Shanghai, China', coords: [31.2304, 121.4737] },
+  'odyssey/odyssey-03.jpg': { location: 'Nanchang, Jiangxi, China', coords: [28.682, 115.858] },
+  'travel/travel-04.jpg': { location: 'Macau, China', coords: [22.1987, 113.5439] },
+  'travel/travel-10.jpg': { location: 'Xiamen, Fujian, China', coords: [24.4798, 118.0894] },
   'travel/travel-12.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
+  'frame/frame-02.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
+  'before/before-06.jpg': { location: 'Dresden, Germany', coords: [51.043, 13.742] },
 }
 
 const works = Object.entries(modules)

@@ -10,8 +10,8 @@ const CHAPTERS = [
     no: 'I',
     title: 'Departure',
     prose:
-      'It began on water. A white ferry crossing Erhai Lake in Dali, grey light, mountains barely sure they exist. I was still in China then, the camera still new, pointing at everything the way you point at everything when you are just beginning to see.',
-    works: ['landscape/landscape-01'],
+      'It began in China, before I knew what I was doing — a blue hour under a tree in Xiamen, a street in Kunming letting the sky through, ordinary places I was about to leave. The camera was new; so was the habit of stopping to look.',
+    works: ['travel/travel-10', 'street/street-01'],
   },
   {
     no: 'II',
@@ -62,8 +62,8 @@ export default function EssayPage() {
             <p className="eyebrow">Essay</p>
             <h1>The Long Walk</h1>
             <p className="essay-intro">
-              Photographs from three years of walking — from the ferry at Dali to the end of the
-              world.
+              Photographs from three years of walking — from the first frames in China to the end
+              of the world.
             </p>
           </Reveal>
         </div>
