@@ -281,12 +281,12 @@ const overrides = {
 
   // --- The Before Trilogy — three times of day, one question ---
   'before/before-01.jpg': {
-    title: 'The Morning We Met',
+    title: 'Before Sunrise',
     description:
       'Early morning on a quiet sidewalk, and two people walking the same direction — one carrying a light backpack, both seen from behind or in profile. The low pale light belongs to the beginning of the day: nothing decided yet, everything still possible.',
   },
   'before/before-02.jpg': {
-    title: 'The Long Evening',
+    title: 'Before Sunset',
     description:
       'Dusk on a residential street, two people standing close together near a large tree. Over the scene, a pale wall, window-like shapes and soft leaf shadows are laid like a collage — the evening holding its moment the way memory holds it: loosely, deliberately, almost ready to end.',
   },
