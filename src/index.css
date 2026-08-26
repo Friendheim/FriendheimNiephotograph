@@ -381,9 +381,10 @@ ul {
 }
 
 .hero h1 {
-  font-size: clamp(2.9rem, 7vw, 4.7rem);
+  font-size: clamp(2.15rem, 8vw, 4.7rem);
   font-weight: 420;
   margin-bottom: 0.35em;
+  overflow-wrap: anywhere;
 }
 
 .hero-slogan {
