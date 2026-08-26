@@ -192,6 +192,8 @@ const overrides = {
     date: 'July 15, 2026',
     description:
       'Finally — the end of the world. The plane fought through rough air, and when it landed the whole cabin applauded, like a scene from a film. The door opened onto golden light, and an iceberg rose to meet us. Ushuaia.',
+    thanks:
+      'From Dresden to Ushuaia, I crossed half the world. Standing on this land they call the end of the world — snow mountains, the bay, Spanish spoken with a Latin accent — everything reminds me how vast and different the world is. I once believed the distance would be an unclimbable wall; standing quietly here, watching the locals talk in the sea wind, I understood: we define each other by nationality, language, skin, and forget that we are all human. Kindness, warmth, curiosity — the same on every shore. What truly crosses difference is not erasing it, but seeing each other.\n\nThank you, GCC Foundation. When I said I wanted to become a Magnum photographer, most people doubted me; you believed in me and carried the full cost of this long journey. That trust across mountains and seas, I will always remember.',
   },
   'travel/travel-13.jpg': {
     title: 'Light Across the Snow',

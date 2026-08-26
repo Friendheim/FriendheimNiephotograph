@@ -156,6 +156,7 @@ export function workInLang(w, lang) {
     title: w.titleZh || w.title,
     description: w.descriptionZh || w.description,
     category: w.categoryZh || w.category,
+    thanks: w.thanksZh || w.thanks,
   }
 }
 

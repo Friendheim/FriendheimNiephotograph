@@ -928,6 +928,24 @@ ul {
   margin-bottom: 0;
 }
 
+.lightbox-thanks {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  max-width: 40rem;
+}
+
+.lightbox-thanks p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 0.8rem;
+}
+
+.lightbox-thanks p:last-child {
+  margin-bottom: 0;
+}
+
 .lightbox-note {
   font-size: 0.85rem;
   color: var(--ink-mute);

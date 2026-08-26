@@ -153,6 +153,13 @@ export default function Lightbox({ work, items = [], onClose, onNavigate }) {
             </div>
           )}
           {w.description && <p className="lightbox-desc">{w.description}</p>}
+          {w.thanks && (
+            <div className="lightbox-thanks">
+              {w.thanks.split('\n\n').map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          )}
           <div className="lightbox-actions">
             <button
               type="button"
