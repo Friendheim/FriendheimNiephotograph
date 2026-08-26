@@ -100,23 +100,28 @@ app.whenReady().then(async () => {
 
     // ---------- Portfolio ----------
     await win.loadURL(BASE + '#/work')
-    await wait(1800)
-    // scroll through the grid so lazy-loaded images count reliably
-    await win.webContents.executeJavaScript(`(async () => {
-      for (let y = 0; y <= document.body.scrollHeight; y += 700) {
-        window.scrollTo(0, y)
-        await new Promise(r => setTimeout(r, 100))
-      }
-      window.scrollTo(0, 0)
-    })()`)
-    await wait(800)
+    await wait(4000) // let Vite finish first-pass module compilation
+    // scroll through the grid so lazy-loaded images count reliably (retry loop)
+    let loadedImgs = 0
+    for (let attempt = 0; attempt < 3 && loadedImgs < EXPECTED_TOTAL; attempt++) {
+      await win.webContents.executeJavaScript(`(async () => {
+        for (let y = 0; y <= document.body.scrollHeight; y += 600) {
+          window.scrollTo(0, y)
+          await new Promise(r => setTimeout(r, 120))
+        }
+        window.scrollTo(0, 0)
+      })()`)
+      await wait(1500)
+      loadedImgs = await win.webContents.executeJavaScript(
+        `[...document.querySelectorAll('.masonry img')].filter(i => i.complete && i.naturalWidth > 0).length`
+      )
+    }
     const work = await win.webContents.executeJavaScript(`(() => ({
       cards: document.querySelectorAll('.masonry .work-card').length,
-      imgs: [...document.querySelectorAll('.masonry img')].filter(i => i.complete && i.naturalWidth > 0).length,
       filters: document.querySelectorAll('.filter-btn').length,
     }))()`)
     check('work grid matches photos on disk', work.cards === EXPECTED_TOTAL, `${work.cards} vs ${EXPECTED_TOTAL}`)
-    check('all work images loaded', work.imgs === EXPECTED_TOTAL, `${work.imgs}/${EXPECTED_TOTAL}`)
+    check('all work images loaded', loadedImgs === EXPECTED_TOTAL, `${loadedImgs}/${EXPECTED_TOTAL}`)
     check('9 filter buttons', work.filters === 9, work.filters)
     await shot(win, 'work-light.png')
 
