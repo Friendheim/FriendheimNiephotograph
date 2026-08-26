@@ -1,11 +1,9 @@
 import Reveal from '../components/Reveal.jsx'
-import { useLang } from '../i18n.jsx'
-import { site } from '../data/site.js'
-import { siteZh } from '../data/zh.js'
+import { useLang, useSite } from '../i18n.jsx'
 
 export default function About() {
   const { lang, t } = useLang()
-  const s = lang === 'zh' ? { ...site, ...siteZh } : site
+  const s = useSite()
   const { about } = s
 
   return (

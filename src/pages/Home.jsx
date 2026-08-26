@@ -2,9 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal.jsx'
 import Lightbox from '../components/Lightbox.jsx'
-import { useLang, workInLang } from '../i18n.jsx'
-import { site } from '../data/site.js'
-import { siteZh } from '../data/zh.js'
+import { useLang, useSite, workInLang } from '../i18n.jsx'
 import { works } from '../data/works.js'
 
 // Six featured frames with an identical natural aspect ratio (16:9) — no cropping.
@@ -19,7 +17,7 @@ const FEATURED_KEYS = [
 
 export default function Home() {
   const { lang, t } = useLang()
-  const s = lang === 'zh' ? { ...site, ...siteZh } : site
+  const s = useSite()
   const featured = FEATURED_KEYS.map((k) => works.find((w) => w.id === k)).filter(Boolean)
   const [selected, setSelected] = useState(null)
 

@@ -1,4 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import { site } from './data/site.js'
+import { siteZh } from './data/zh.js'
 
 const LanguageContext = createContext(null)
 
@@ -154,5 +156,20 @@ export function workInLang(w, lang) {
     title: w.titleZh || w.title,
     description: w.descriptionZh || w.description,
     category: w.categoryZh || w.category,
+  }
+}
+
+// Site content for the active language — deep-merges the Chinese overrides
+// so fields absent from siteZh (e.g. hero.image, email, instagram) fall back
+// to the English site.
+export function useSite() {
+  const { lang } = useLang()
+  if (lang !== 'zh') return site
+  return {
+    ...site,
+    ...siteZh,
+    hero: { ...site.hero, ...siteZh.hero },
+    about: { ...site.about, ...siteZh.about },
+    contact: { ...site.contact, ...siteZh.contact },
   }
 }

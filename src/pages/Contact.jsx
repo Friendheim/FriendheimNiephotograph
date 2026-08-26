@@ -1,12 +1,11 @@
 import Reveal from '../components/Reveal.jsx'
 import { MailIcon, InstagramIcon } from '../components/icons.jsx'
-import { useLang } from '../i18n.jsx'
+import { useLang, useSite } from '../i18n.jsx'
 import { site } from '../data/site.js'
-import { siteZh } from '../data/zh.js'
 
 export default function Contact() {
   const { lang, t } = useLang()
-  const s = lang === 'zh' ? { ...site, ...siteZh } : site
+  const s = useSite()
   const mailto = `mailto:${site.email}?subject=${encodeURIComponent('Photography collaboration')}`
 
   return (

@@ -105,6 +105,11 @@ app.whenReady().then(async () => {
       `[...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join(',')`
     )
     check('switches to Chinese', zhNav.includes('首页') && zhNav.includes('作品'), zhNav)
+    const zhHero = await win.webContents.executeJavaScript(`(() => {
+      const img = document.querySelector('.hero-figure img')
+      return !!img && !!img.src && img.complete && img.naturalWidth > 0
+    })()`)
+    check('zh hero image loads', zhHero)
     await win.webContents.executeJavaScript(`document.querySelector('.lang-toggle').click()`)
     await wait(400)
 
