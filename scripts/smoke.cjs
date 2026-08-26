@@ -251,6 +251,16 @@ app.whenReady().then(async () => {
     }))()`)
     check('series page shows Odyssey + 3 works', sp.h1 === 'Odyssey' && sp.cards === 3, `${sp.h1} / ${sp.cards}`)
 
+    // ---------- Map page ----------
+    await win.loadURL(BASE + '#/map')
+    await wait(2500)
+    const map = await win.webContents.executeJavaScript(`(() => ({
+      wrap: !!document.querySelector('.map-wrap'),
+      pins: document.querySelectorAll('.map-pin').length,
+      h1: (document.querySelector('h1') || {}).textContent || '',
+    }))()`)
+    check('map page renders with pins', map.wrap && map.pins >= 10 && /Where these frames/.test(map.h1), `${map.pins} pins`)
+
     // ---------- About ----------
     await win.loadURL(BASE + '#/about')
     await wait(1400)

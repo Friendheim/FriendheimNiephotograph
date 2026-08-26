@@ -6,6 +6,7 @@ import BackToTop from './components/BackToTop.jsx'
 import Home from './pages/Home.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import SeriesPage from './pages/SeriesPage.jsx'
+import MapPage from './pages/MapPage.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/work" element={<Portfolio />} />
           <Route path="/work/:workKey" element={<Portfolio />} />
           <Route path="/series/:seriesKey" element={<SeriesPage />} />
+          <Route path="/map" element={<MapPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />

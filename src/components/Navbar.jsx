@@ -6,6 +6,7 @@ import { site } from '../data/site.js'
 const links = [
   { to: '/', label: 'Home', end: true },
   { to: '/work', label: 'Work' },
+  { to: '/map', label: 'Map' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]

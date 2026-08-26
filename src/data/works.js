@@ -323,6 +323,24 @@ function humanizeTitle(filename) {
     .trim()
 }
 
+// Map pins: approximate coordinates + display locations for works with known
+// or strongly implied places (used by the Map page). More will join as the
+// collection grows — edit freely.
+const placePins = {
+  'street/street-01.jpg': { location: 'Dresden, Germany', coords: [51.053, 13.737] },
+  'street/street-02.jpg': { location: 'Dresden, Germany', coords: [51.047, 13.741] },
+  'street/street-03.jpg': { location: 'Dresden, Germany', coords: [51.05, 13.733] },
+  'street/street-04.jpg': { location: 'Dresden, Germany', coords: [51.046, 13.739] },
+  'street/street-05.jpg': { location: 'Dresden, Germany', coords: [51.051, 13.742] },
+  'street/street-06.jpg': { location: 'Dresden, Germany', coords: [51.044, 13.735] },
+  'street/street-07.jpg': { location: 'Dresden, Germany', coords: [51.049, 13.744] },
+  'street/street-09.jpg': { location: 'London, United Kingdom', coords: [51.5007, -0.1246] },
+  'landscape/landscape-04.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.76, 0.202] },
+  'memory/memory-01.jpg': { location: 'Seven Sisters, United Kingdom', coords: [50.762, 0.205] },
+  'before/before-06.jpg': { location: 'Dresden, Germany', coords: [51.043, 13.742] },
+  'travel/travel-12.jpg': { location: 'Ushuaia, Argentina', coords: [-54.8019, -68.303] },
+}
+
 const works = Object.entries(modules)
   .map(([key, url]) => {
     const match = /\.\.\/assets\/works\/([^/]+)\/([^/]+)$/.exec(key)
@@ -331,15 +349,17 @@ const works = Object.entries(modules)
     const filename = match[2]
     const category = labelFor(folder)
     const override = overrides[`${folder}/${filename}`] || {}
+    const place = placePins[`${folder}/${filename}`] || {}
     return {
       id: key,
       folder,
       title: override.title || humanizeTitle(filename),
       category,
-      location: override.location || '',
+      location: override.location || place.location || '',
       date: override.date || '',
       description: override.description || '',
       image: url,
+      coords: place.coords || override.coords || null,
       alt: override.alt || `${override.title || humanizeTitle(filename)} — ${category} photograph`,
     }
   })
