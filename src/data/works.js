@@ -192,17 +192,19 @@ const overrides = {
     description:
       'The house is dismantled into material studies — glass, foliage, shadow, and measured plane. Its repeated placement makes the domestic façade feel less like a fixed object than a proposition continually redrawn.',
   },
-  'creative/creative-07.jpg': {
+
+  // --- Odyssey (奥德赛) — a series in three parts ---
+  'odyssey/odyssey-01.jpg': {
     title: 'The Passage',
     description:
       'A street crowd crosses like travellers threading a strait — converging for a moment, then leaving in different directions. Light and shadow record an ordinary passage, and quietly echo the choices and unknowns that followed Odysseus across his long wandering.',
   },
-  'creative/creative-08.jpg': {
+  'odyssey/odyssey-02.jpg': {
     title: 'The City of Trials',
     description:
       'Towers rise into a vast spatial structure — the labyrinth of the modern world. The scale of the buildings presses down on those walking beneath them, while hidden mythic forms remind us that every city holds its own trial, its own waiting maze.',
   },
-  'creative/creative-09.jpg': {
+  'odyssey/odyssey-03.jpg': {
     title: 'The Island Beyond',
     description:
       'Still water keeps its careful distance from the far city, the way Odysseus paused to regard an unknown island. There is no destination here — only waiting, watching, and the imagining of what lies beyond.',
@@ -238,8 +240,9 @@ const CATEGORY_LABELS = {
   street: 'Streets',
   travel: 'Journeys',
   creative: 'Creative',
+  odyssey: 'Odyssey',
 }
-const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative']
+const KNOWN_ORDER = ['portrait', 'landscape', 'street', 'travel', 'creative', 'odyssey']
 
 function labelFor(folder) {
   return CATEGORY_LABELS[folder] || folder.charAt(0).toUpperCase() + folder.slice(1)
